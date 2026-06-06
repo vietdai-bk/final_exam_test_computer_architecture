@@ -1,7 +1,7 @@
 window.registerExam({
   "id": "exam_02",
   "title": "Đề luyện tập 02 - RISC-V, Cache và Pipeline",
-  "description": "Đề số 02.",
+  "description": "Đề số 02 được tách riêng trong exams/exam_02.js. Mỗi câu 10 điểm, tổng 100 điểm. Đáp án chỉ hiện sau khi nộp bài.",
   "questions": [
     {
       "id": "q1",
@@ -3070,12 +3070,12 @@ window.registerExam({
           "id": "q7_D",
           "label": "D",
           "answers": [
-            "00011"
+            "00000"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00011"
+          "show": "00000"
         },
         {
           "id": "q7_E",
@@ -3158,12 +3158,12 @@ window.registerExam({
           "id": "q7_L",
           "label": "L",
           "answers": [
-            "96"
+            "0"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "96"
+          "show": "0"
         },
         {
           "id": "q7_M",
@@ -3221,7 +3221,7 @@ window.registerExam({
           "show": "4292"
         }
       ],
-      "solution": "For lw, MemRead = 1, MemWrite = 0, RegWrite = 1, MemtoReg = 1. rs1 = x11 = 352 and imm = 96, so the effective address is 448. Memory returns M + 500 = 948, therefore the write-back value N is 948."
+      "solution": "lw x18, 96(x11): x11 = 32×11 = 352, effective address = 352 + 96 = 448, memory data = 448 + 500 = 948. Instruction = 0x0605A903. For I-type lw, bits [24:20] are imm[4:0], not rs2; 96 = 000001100000, so D = 00000 and the register file second read value L = x0 = 0. RegWrite=1, ALUSrc=1, MemRead=1, MemWrite=0, MemtoReg=1."
     },
     {
       "id": "q8",

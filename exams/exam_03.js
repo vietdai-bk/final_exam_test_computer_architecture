@@ -1,7 +1,7 @@
 window.registerExam({
   "id": "exam_03",
   "title": "Đề luyện tập 03 - RISC-V, Cache và Pipeline",
-  "description": "Đề số 03.",
+  "description": "Đề số 03 có câu hỏi mới và đã xáo vị trí dạng câu. Mỗi câu 10 điểm, tổng 100 điểm. Đáp án chỉ hiện sau khi nộp bài.",
   "questions": [
     {
       "id": "q1",
@@ -1146,12 +1146,12 @@ window.registerExam({
           "id": "q6_total_bits",
           "label": "Total bits required to implement the cache",
           "answers": [
-            "3192"
+            "1644"
           ],
           "type": "decimal",
           "unit": "bits",
           "hint": "",
-          "show": "3192"
+          "show": "1644"
         }
       ],
       "columns": [
@@ -2929,7 +2929,7 @@ window.registerExam({
           "show": "2"
         }
       ],
-      "solution": "Cache blocks = 48/2 = 24. Sets = 24/3 = 8, so index = 3 bits. Offset = 1 bit. Tag = 8 - 3 - 1 = 4 bits. Hit/Miss sequence: M, M, M, H, M, M, H, M, M, H, H, M, M, M. Replacements = 2. Cache is not full because not every set has all three ways occupied. Total bits = 24 × (2×64 data + 4 tag + 1 valid) = 3192 bits."
+      "solution": "Cache blocks = 48/2 = 24. Sets = 24/3 = 8, so index = 3 bits. Offset = 1 bit. Tag = 8 - 3 - 1 = 4 bits. Hit/Miss sequence: M, M, M, H, M, M, H, M, M, H, H, M, M, M. Replacements = 2. Cache is not full because not every set has all three ways occupied. Total bits = 24 × (2×64 data + 4 tag + 1 valid + 1 dirty) = 1644 bits."
     },
     {
       "id": "q7",
@@ -3163,12 +3163,12 @@ window.registerExam({
           "id": "q7_L",
           "label": "L",
           "answers": [
-            "124"
+            "1344"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "124"
+          "show": "1344"
         },
         {
           "id": "q7_M",
@@ -3226,7 +3226,7 @@ window.registerExam({
           "show": "2300"
         }
       ],
-      "solution": "For lw, RegWrite=1, ALUSrc=1, MemRead=1, MemtoReg=1, MemWrite=0. x8=384. Effective address = 384 + 124 = 508. Memory data = 508 + 300 = 808."
+      "solution": "lw x14, 124(x8): x8 = 48×8 = 384, effective address = 384 + 124 = 508, memory data = 508 + 300 = 808. Instruction = 0x07C42703. For I-type lw, D is imm[4:0] = 11100, so the datapath still reads register x28 on the second read port; L = x28 = 48×28 = 1344. ALUSrc chooses the immediate 124 for the ALU input, so J=124 and K=508."
     },
     {
       "id": "q8",
@@ -3805,15 +3805,15 @@ window.registerExam({
           "id": "q8_repl",
           "label": "How many replacements occurred?",
           "answers": [
-            "4"
+            "6"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "4"
+          "show": "6"
         }
       ],
-      "solution": "Block offset = 1 bit and tag = 7 bits. The cache has 8/2 = 4 blocks. Hit/Miss sequence: M, H, M, M, H, M, H, H, M, H, M, H, M, M. There are 4 replacements after the cache is full."
+      "solution": "Block offset = 1 bit and tag = 7 bits. The cache has 8/2 = 4 blocks. Hit/Miss sequence: M, H, M, M, H, M, H, H, M, H, M, H, M, M. There are 6 replacements after the cache is full."
     },
     {
       "id": "q9",
