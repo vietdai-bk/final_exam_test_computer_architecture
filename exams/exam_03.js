@@ -1146,12 +1146,12 @@ window.registerExam({
           "id": "q6_total_bits",
           "label": "Total bits required to implement the cache",
           "answers": [
-            "1644"
+            "3192"
           ],
           "type": "decimal",
           "unit": "bits",
           "hint": "",
-          "show": "1644"
+          "show": "3192"
         }
       ],
       "columns": [
@@ -2929,7 +2929,7 @@ window.registerExam({
           "show": "2"
         }
       ],
-      "solution": "Cache blocks = 48/2 = 24. Sets = 24/3 = 8, so index = 3 bits. Offset = 1 bit. Tag = 8 - 3 - 1 = 4 bits. Hit/Miss sequence: M, M, M, H, M, M, H, M, M, H, H, M, M, M. Replacements = 2. Cache is not full because not every set has all three ways occupied. Total bits = 24 × (2×64 data + 4 tag + 1 valid + 1 dirty) = 1644 bits."
+      "solution": "Cache blocks = 48/2 = 24. Sets = 24/3 = 8, so index = 3 bits. Offset = 1 bit. Tag = 8 - 3 - 1 = 4 bits. Hit/Miss sequence: M, M, M, H, M, M, H, M, M, H, H, M, M, M. Replacements = 2. Cache is not full because not every set has all three ways occupied. Total bits = 24 × (2×64 data + 4 tag + 1 valid) = 3192 bits."
     },
     {
       "id": "q7",
