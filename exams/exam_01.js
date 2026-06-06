@@ -792,7 +792,7 @@ window.registerExam({
       "type": "access_table",
       "points": 10,
       "title": "Câu 5 - 3-way set associative cache, điền Way theo từng dòng",
-      "prompt": "Assume the memory is <b>word addressing</b> with <b>8-bit addresses</b> and the cache is a <b>3-way set associative cache</b> with <b>2-word blocks</b> and a total size of <b>48 words</b>. Assume <b>1 word = 64 bits</b>.<br><br>First, fill in the cache parameters. Then use <b>true LRU</b>. For each reference, identify binary address, tag, set index, offset, hit/miss, and the tags in each way after the reference has been handled.<br><br><b>Lưu ý:</b> Nếu một Way có nhiều dòng dạng <code>T(index)=tag</code>, mỗi dòng sẽ là một ô nhập riêng. Các giá trị trong Way sẽ không hiện trước khi nộp bài.<br><br>Sequence:<br><code>0x03, 0xb4, 0x2b, 0x02, 0xbe, 0x58, 0xbf, 0x0e, 0x1f, 0xb5, 0xbf, 0xba, 0x2e, 0xce</code>",
+      "prompt": "Assume the memory is <b>word addressing</b> with <b>8-bit addresses</b> and the cache is a <b>3-way set associative cache</b> with <b>2-word blocks</b> and a total size of <b>48 words</b>. Assume <b>1 word = 64 bits</b>.<br><br>First, fill in the cache parameters. Then use <b>true LRU</b>. For each reference, identify binary address, tag, set index, offset, hit/miss, and the tags in each way after the reference has been handled.<br><br><b>Lưu ý:</b> Nếu một Way có nhiều dòng như <code>T(index)=tag</code>, <code>T(xxx)=yyyy</code>, mỗi dòng sẽ là một ô nhập riêng.<br><br>Sequence:<br><code>0x03, 0xb4, 0x2b, 0x02, 0xbe, 0x58, 0xbf, 0x0e, 0x1f, 0xb5, 0xbf, 0xba, 0x2e, 0xce</code>",
       "fields_intro": [
         {
           "id": "q5_blocks_cache",

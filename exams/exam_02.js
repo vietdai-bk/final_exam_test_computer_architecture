@@ -1,14 +1,14 @@
-{
-  "id": "exam_01",
-  "title": "Đề luyện tập 01 - RISC-V, Cache và Pipeline",
-  "description": "Project version: 10 câu mô phỏng theo dạng bài cuối kỳ. Mỗi câu 10 điểm, tổng 100 điểm. Dữ liệu đề nằm riêng trong thư mục exams/.",
+window.registerExam({
+  "id": "exam_02",
+  "title": "Đề luyện tập 02 - RISC-V, Cache và Pipeline",
+  "description": "Đề số 02 được tách riêng trong exams/exam_02.js. Mỗi câu 10 điểm, tổng 100 điểm. Đáp án chỉ hiện sau khi nộp bài.",
   "questions": [
     {
       "id": "q1",
       "type": "fields",
       "points": 10,
-      "title": "Câu 1 - Cache set associative, byte addressing",
-      "prompt": "Here is the cache with the following key characteristics:<br>\n            <b>2-Way Set Associative Cache</b><br>\n            Write policy: <b>Write-back using write allocate</b> (one Dirty bit for a block)<br>\n            Block size is <b>64 bytes</b><br>\n            Cache size is <b>128 KB</b><br>\n            Memory is byte addressing with <b>32-bit addresses</b>.<br><br>\n            Fill in the following values.",
+      "title": "Câu 1 - 2-way set associative cache, byte addressing",
+      "prompt": "Here is the cache with the following key characteristics:<br><b>2-Way Set Associative Cache</b><br>Write policy: <b>Write-back using write allocate</b> (one Dirty bit for a block)<br>Block size is <b>32 bytes</b><br>Cache size is <b>64 KB</b><br>Memory is byte addressing with <b>32-bit addresses</b>.<br><br>Fill in the following values.",
       "fields": [
         {
           "id": "q1_index",
@@ -25,23 +25,23 @@
           "id": "q1_offset",
           "label": "Block offset",
           "answers": [
-            "6"
+            "5"
           ],
           "type": "decimal",
           "unit": "bits",
           "hint": "",
-          "show": "6"
+          "show": "5"
         },
         {
           "id": "q1_tag",
           "label": "Tag size for a block",
           "answers": [
-            "16"
+            "17"
           ],
           "type": "decimal",
           "unit": "bits",
           "hint": "",
-          "show": "16"
+          "show": "17"
         },
         {
           "id": "q1_blocks",
@@ -58,44 +58,44 @@
           "id": "q1_bits",
           "label": "Total bits required to implement the cache",
           "answers": [
-            "1085440"
+            "563200"
           ],
           "type": "decimal",
           "unit": "bits",
           "hint": "",
-          "show": "1085440"
+          "show": "563200"
         }
       ],
-      "solution": "Blocks = 128KB / 64B = 2048. Sets = 2048 / 2 = 1024 => index = 10 bits. Offset = log2(64) = 6 bits. Tag = 32 - 10 - 6 = 16 bits. Total = 2048 × (64×8 + 16 + valid 1 + dirty 1) = 1,085,440 bits."
+      "solution": "Blocks = 64KB / 32B = 2048. Sets = 2048 / 2 = 1024 => set index = 10 bits. Offset = log2(32) = 5 bits. Tag = 32 - 10 - 5 = 17 bits. Total bits = 2048 × (32×8 data + 17 tag + 1 valid + 1 dirty) = 563,200 bits."
     },
     {
       "id": "q2",
       "type": "fields",
       "points": 10,
-      "title": "Câu 2 - Cache set associative khác cấu hình",
-      "prompt": "Here is the cache with the following key characteristics:<br>\n            <b>4-Way Set Associative Cache</b><br>\n            Write policy: <b>Write-back using write allocate</b> (one Dirty bit for a block)<br>\n            Block size is <b>32 bytes</b><br>\n            Cache size is <b>32 KB</b><br>\n            Memory is byte addressing with <b>32-bit addresses</b>.",
+      "title": "Câu 2 - 4-way set associative cache, byte addressing",
+      "prompt": "Here is the cache with the following key characteristics:<br><b>4-Way Set Associative Cache</b><br>Write policy: <b>Write-back using write allocate</b> (one Dirty bit for a block)<br>Block size is <b>64 bytes</b><br>Cache size is <b>32 KB</b><br>Memory is byte addressing with <b>32-bit addresses</b>.",
       "fields": [
         {
           "id": "q2_index",
           "label": "Set index",
           "answers": [
-            "8"
+            "7"
           ],
           "type": "decimal",
           "unit": "bits",
           "hint": "",
-          "show": "8"
+          "show": "7"
         },
         {
           "id": "q2_offset",
           "label": "Block offset",
           "answers": [
-            "5"
+            "6"
           ],
           "type": "decimal",
           "unit": "bits",
           "hint": "",
-          "show": "5"
+          "show": "6"
         },
         {
           "id": "q2_tag",
@@ -112,44 +112,44 @@
           "id": "q2_blocks",
           "label": "Number of blocks",
           "answers": [
-            "1024"
+            "512"
           ],
           "type": "decimal",
           "unit": "blocks",
           "hint": "",
-          "show": "1024"
+          "show": "512"
         },
         {
           "id": "q2_bits",
           "label": "Total bits required to implement the cache",
           "answers": [
-            "283648"
+            "272896"
           ],
           "type": "decimal",
           "unit": "bits",
           "hint": "",
-          "show": "283648"
+          "show": "272896"
         }
       ],
-      "solution": "Blocks = 32KB / 32B = 1024. Sets = 1024 / 4 = 256 => index = 8 bits. Offset = log2(32) = 5 bits. Tag = 32 - 8 - 5 = 19 bits. Total = 1024 × (32×8 + 19 + valid 1 + dirty 1) = 283,648 bits."
+      "solution": "Blocks = 32KB / 64B = 512. Sets = 512 / 4 = 128 => index = 7 bits. Offset = 6 bits. Tag = 32 - 7 - 6 = 19 bits. Total = 512 × (64×8 + 19 + valid 1 + dirty 1) = 272,896 bits."
     },
     {
       "id": "q3",
       "type": "fields",
       "points": 10,
-      "title": "Câu 3 - Fully associative cache, word addressing",
-      "prompt": "Assume the main memory is <b>word addressing</b> with <b>8-bit addresses</b> and the cache is a <b>fully associative cache</b> with <b>one-word blocks</b> and a total size of <b>16 words</b>. Assume one word is <b>32 bits</b>.",
+      "title": "Câu 3 - Fully associative cache parameters",
+      "prompt": "Assume the main memory is <b>word addressing</b> with <b>8-bit addresses</b> and the cache is a <b>fully associative cache</b> with <b>two-word blocks</b> and a total size of <b>8 words</b>. Assume one word is <b>32 bits</b>.",
       "fields": [
         {
           "id": "q3_blocks_cache",
           "label": "Number of blocks in the cache",
           "answers": [
-            "16"
+            "4"
           ],
           "type": "decimal",
           "unit": "blocks",
           "hint": "",
-          "show": "16"
+          "show": "4"
         },
         {
           "id": "q3_sets",
@@ -166,44 +166,44 @@
           "id": "q3_blocks_mem",
           "label": "Number of blocks in the memory",
           "answers": [
-            "256"
+            "128"
           ],
           "type": "decimal",
           "unit": "blocks",
           "hint": "",
-          "show": "256"
+          "show": "128"
         },
         {
           "id": "q3_tag",
           "label": "Number of tag bits in each block",
           "answers": [
-            "8"
+            "7"
           ],
           "type": "decimal",
           "unit": "bits",
           "hint": "",
-          "show": "8"
+          "show": "7"
         },
         {
           "id": "q3_bits",
           "label": "Total bits required to implement the cache",
           "answers": [
-            "656"
+            "288"
           ],
           "type": "decimal",
           "unit": "bits",
           "hint": "",
-          "show": "656"
+          "show": "288"
         }
       ],
-      "solution": "One-word block => offset = 0. Fully associative => index = 0. Tag = 8 bits. Cache has 16 blocks. Memory has 2^8 = 256 blocks. Total = 16 × (32 data bits + 8 tag bits + 1 valid bit) = 656 bits."
+      "solution": "Cache blocks = 8/2 = 4. Fully associative => 1 set and 0 index bits. Memory blocks = 2^8/2 = 128. Offset = log2(2) = 1 bit, so tag = 8 - 1 = 7 bits. Total = 4 × (2×32 data + 7 tag + 1 valid) = 288 bits."
     },
     {
       "id": "q4",
       "type": "access_table",
       "points": 10,
       "title": "Câu 4 - Fully associative cache với true LRU",
-      "prompt": "Assume the main memory is <b>word addressing</b> with <b>8-bit addresses</b> and the cache is a <b>fully associative cache</b> with <b>two-word blocks</b> and a total size of <b>8 words</b>. Assume one word is <b>32 bits</b>.<br><br>\n            Sequence of word addresses:<br><code>0x03, 0x04, 0x10, 0x20, 0x03, 0x24, 0x05, 0x21, 0x30, 0x04, 0x25, 0x31, 0x40, 0x03</code><br><br>\n            Assume a true LRU replacement policy. For each reference, identify the binary word address, the tag, and hit/miss.",
+      "prompt": "Assume the main memory is <b>word addressing</b> with <b>8-bit addresses</b> and the cache is a <b>fully associative cache</b> with <b>two-word blocks</b> and a total size of <b>8 words</b>. Assume one word is <b>32 bits</b>.<br><br>Sequence of word addresses:<br><code>0x03, 0x04, 0x10, 0x20, 0x03, 0x24, 0x05, 0x21, 0x30, 0x04, 0x25, 0x31, 0x40, 0x03</code><br><br>Assume a true LRU replacement policy. For each reference, identify the binary word address, the tag, and hit/miss.",
       "columns": [
         "Word Address in Hex",
         "Word Address in Binary",
@@ -215,7 +215,7 @@
           "addr": "0x03",
           "cells": [
             {
-              "id": "q4_03_bin_0",
+              "id": "q4_0_bin",
               "label": "Word address in binary",
               "answers": [
                 "00000011"
@@ -226,7 +226,7 @@
               "show": "00000011"
             },
             {
-              "id": "q4_03_tag_0",
+              "id": "q4_0_tag",
               "label": "Tag in binary",
               "answers": [
                 "0000001"
@@ -237,13 +237,13 @@
               "show": "0000001"
             },
             {
-              "id": "q4_03_hm_0",
-              "label": "Hit/Miss",
+              "id": "q4_0_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
@@ -254,7 +254,7 @@
           "addr": "0x04",
           "cells": [
             {
-              "id": "q4_04_bin_1",
+              "id": "q4_1_bin",
               "label": "Word address in binary",
               "answers": [
                 "00000100"
@@ -265,7 +265,7 @@
               "show": "00000100"
             },
             {
-              "id": "q4_04_tag_1",
+              "id": "q4_1_tag",
               "label": "Tag in binary",
               "answers": [
                 "0000010"
@@ -276,13 +276,13 @@
               "show": "0000010"
             },
             {
-              "id": "q4_04_hm_1",
-              "label": "Hit/Miss",
+              "id": "q4_1_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
@@ -293,7 +293,7 @@
           "addr": "0x10",
           "cells": [
             {
-              "id": "q4_10_bin_2",
+              "id": "q4_2_bin",
               "label": "Word address in binary",
               "answers": [
                 "00010000"
@@ -304,7 +304,7 @@
               "show": "00010000"
             },
             {
-              "id": "q4_10_tag_2",
+              "id": "q4_2_tag",
               "label": "Tag in binary",
               "answers": [
                 "0001000"
@@ -315,13 +315,13 @@
               "show": "0001000"
             },
             {
-              "id": "q4_10_hm_2",
-              "label": "Hit/Miss",
+              "id": "q4_2_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
@@ -332,7 +332,7 @@
           "addr": "0x20",
           "cells": [
             {
-              "id": "q4_20_bin_3",
+              "id": "q4_3_bin",
               "label": "Word address in binary",
               "answers": [
                 "00100000"
@@ -343,7 +343,7 @@
               "show": "00100000"
             },
             {
-              "id": "q4_20_tag_3",
+              "id": "q4_3_tag",
               "label": "Tag in binary",
               "answers": [
                 "0010000"
@@ -354,13 +354,13 @@
               "show": "0010000"
             },
             {
-              "id": "q4_20_hm_3",
-              "label": "Hit/Miss",
+              "id": "q4_3_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
@@ -371,7 +371,7 @@
           "addr": "0x03",
           "cells": [
             {
-              "id": "q4_03_bin_4",
+              "id": "q4_4_bin",
               "label": "Word address in binary",
               "answers": [
                 "00000011"
@@ -382,7 +382,7 @@
               "show": "00000011"
             },
             {
-              "id": "q4_03_tag_4",
+              "id": "q4_4_tag",
               "label": "Tag in binary",
               "answers": [
                 "0000001"
@@ -393,13 +393,13 @@
               "show": "0000001"
             },
             {
-              "id": "q4_03_hm_4",
-              "label": "Hit/Miss",
+              "id": "q4_4_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "H",
-                "h"
+                "hit"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "H"
@@ -410,7 +410,7 @@
           "addr": "0x24",
           "cells": [
             {
-              "id": "q4_24_bin_5",
+              "id": "q4_5_bin",
               "label": "Word address in binary",
               "answers": [
                 "00100100"
@@ -421,7 +421,7 @@
               "show": "00100100"
             },
             {
-              "id": "q4_24_tag_5",
+              "id": "q4_5_tag",
               "label": "Tag in binary",
               "answers": [
                 "0010010"
@@ -432,13 +432,13 @@
               "show": "0010010"
             },
             {
-              "id": "q4_24_hm_5",
-              "label": "Hit/Miss",
+              "id": "q4_5_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
@@ -449,7 +449,7 @@
           "addr": "0x05",
           "cells": [
             {
-              "id": "q4_05_bin_6",
+              "id": "q4_6_bin",
               "label": "Word address in binary",
               "answers": [
                 "00000101"
@@ -460,7 +460,7 @@
               "show": "00000101"
             },
             {
-              "id": "q4_05_tag_6",
+              "id": "q4_6_tag",
               "label": "Tag in binary",
               "answers": [
                 "0000010"
@@ -471,13 +471,13 @@
               "show": "0000010"
             },
             {
-              "id": "q4_05_hm_6",
-              "label": "Hit/Miss",
+              "id": "q4_6_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
@@ -488,7 +488,7 @@
           "addr": "0x21",
           "cells": [
             {
-              "id": "q4_21_bin_7",
+              "id": "q4_7_bin",
               "label": "Word address in binary",
               "answers": [
                 "00100001"
@@ -499,7 +499,7 @@
               "show": "00100001"
             },
             {
-              "id": "q4_21_tag_7",
+              "id": "q4_7_tag",
               "label": "Tag in binary",
               "answers": [
                 "0010000"
@@ -510,13 +510,13 @@
               "show": "0010000"
             },
             {
-              "id": "q4_21_hm_7",
-              "label": "Hit/Miss",
+              "id": "q4_7_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "H",
-                "h"
+                "hit"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "H"
@@ -527,7 +527,7 @@
           "addr": "0x30",
           "cells": [
             {
-              "id": "q4_30_bin_8",
+              "id": "q4_8_bin",
               "label": "Word address in binary",
               "answers": [
                 "00110000"
@@ -538,7 +538,7 @@
               "show": "00110000"
             },
             {
-              "id": "q4_30_tag_8",
+              "id": "q4_8_tag",
               "label": "Tag in binary",
               "answers": [
                 "0011000"
@@ -549,13 +549,13 @@
               "show": "0011000"
             },
             {
-              "id": "q4_30_hm_8",
-              "label": "Hit/Miss",
+              "id": "q4_8_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
@@ -566,7 +566,7 @@
           "addr": "0x04",
           "cells": [
             {
-              "id": "q4_04_bin_9",
+              "id": "q4_9_bin",
               "label": "Word address in binary",
               "answers": [
                 "00000100"
@@ -577,7 +577,7 @@
               "show": "00000100"
             },
             {
-              "id": "q4_04_tag_9",
+              "id": "q4_9_tag",
               "label": "Tag in binary",
               "answers": [
                 "0000010"
@@ -588,13 +588,13 @@
               "show": "0000010"
             },
             {
-              "id": "q4_04_hm_9",
-              "label": "Hit/Miss",
+              "id": "q4_9_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "H",
-                "h"
+                "hit"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "H"
@@ -605,7 +605,7 @@
           "addr": "0x25",
           "cells": [
             {
-              "id": "q4_25_bin_10",
+              "id": "q4_10_bin",
               "label": "Word address in binary",
               "answers": [
                 "00100101"
@@ -616,7 +616,7 @@
               "show": "00100101"
             },
             {
-              "id": "q4_25_tag_10",
+              "id": "q4_10_tag",
               "label": "Tag in binary",
               "answers": [
                 "0010010"
@@ -627,13 +627,13 @@
               "show": "0010010"
             },
             {
-              "id": "q4_25_hm_10",
-              "label": "Hit/Miss",
+              "id": "q4_10_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "H",
-                "h"
+                "hit"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "H"
@@ -644,7 +644,7 @@
           "addr": "0x31",
           "cells": [
             {
-              "id": "q4_31_bin_11",
+              "id": "q4_11_bin",
               "label": "Word address in binary",
               "answers": [
                 "00110001"
@@ -655,7 +655,7 @@
               "show": "00110001"
             },
             {
-              "id": "q4_31_tag_11",
+              "id": "q4_11_tag",
               "label": "Tag in binary",
               "answers": [
                 "0011000"
@@ -666,13 +666,13 @@
               "show": "0011000"
             },
             {
-              "id": "q4_31_hm_11",
-              "label": "Hit/Miss",
+              "id": "q4_11_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "H",
-                "h"
+                "hit"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "H"
@@ -683,7 +683,7 @@
           "addr": "0x40",
           "cells": [
             {
-              "id": "q4_40_bin_12",
+              "id": "q4_12_bin",
               "label": "Word address in binary",
               "answers": [
                 "01000000"
@@ -694,7 +694,7 @@
               "show": "01000000"
             },
             {
-              "id": "q4_40_tag_12",
+              "id": "q4_12_tag",
               "label": "Tag in binary",
               "answers": [
                 "0100000"
@@ -705,13 +705,13 @@
               "show": "0100000"
             },
             {
-              "id": "q4_40_hm_12",
-              "label": "Hit/Miss",
+              "id": "q4_12_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
@@ -722,7 +722,7 @@
           "addr": "0x03",
           "cells": [
             {
-              "id": "q4_03_bin_13",
+              "id": "q4_13_bin",
               "label": "Word address in binary",
               "answers": [
                 "00000011"
@@ -733,7 +733,7 @@
               "show": "00000011"
             },
             {
-              "id": "q4_03_tag_13",
+              "id": "q4_13_tag",
               "label": "Tag in binary",
               "answers": [
                 "0000001"
@@ -744,13 +744,13 @@
               "show": "0000001"
             },
             {
-              "id": "q4_03_hm_13",
-              "label": "Hit/Miss",
+              "id": "q4_13_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
@@ -785,17 +785,17 @@
           "show": "5"
         }
       ],
-      "solution": "Block size = 2 words => offset = 1 bit. Fully associative => no index. Tag = upper 7 bits = address >> 1. Cache has 4 blocks. Following true LRU, there are 5 replacements and the cache is full after the sequence."
+      "solution": "Block size = 2 words, so the last bit is offset and tag = address >> 1. The cache holds 4 blocks. Hit/miss sequence: M, M, M, M, H, M, M, H, M, H, H, H, M, M. The cache is full and there are 5 replacements."
     },
     {
       "id": "q5",
       "type": "access_table",
       "points": 10,
       "title": "Câu 5 - 3-way set associative cache, điền Way theo từng dòng",
-      "prompt": "Assume the memory is <b>word addressing</b> with <b>8-bit addresses</b> and the cache is a <b>3-way set associative cache</b> with <b>2-word blocks</b> and a total size of <b>48 words</b>. Assume <b>1 word = 64 bits</b>.<br><br>First, fill in the cache parameters. Then use <b>true LRU</b>. For each reference, identify binary address, tag, set index, offset, hit/miss, and the tags in each way after the reference has been handled.<br><br><b>Lưu ý:</b> Nếu một Way có nhiều dòng như <code>T(index)=tag</code>, <code>T(xxx)=yyyy</code>, mỗi dòng sẽ là một ô nhập riêng.<br><br>Sequence:<br><code>0x03, 0xb4, 0x2b, 0x02, 0xbe, 0x58, 0xbf, 0x0e, 0x1f, 0xb5, 0xbf, 0xba, 0x2e, 0xce</code>",
+      "prompt": "Assume the memory is <b>word addressing</b> with <b>8-bit addresses</b> and the cache is a <b>3-way set associative cache</b> with <b>2-word blocks</b> and a total size of <b>48 words</b>. Assume <b>1 word = 64 bits</b>.<br><br>First, fill in the cache parameters. Then use true LRU. For each reference, identify binary address, tag, set index, offset, hit/miss, and the tags in each way after the reference has been handled.<br><br><b>Lưu ý:</b> Nếu một Way có nhiều dòng như <code>T(index)=tag</code>, <code>T(xxx)=yyyy</code>, mỗi dòng sẽ là một ô nhập riêng. Các dòng trong Way nên xếp theo set index tăng dần.",
       "fields_intro": [
         {
-          "id": "q5_blocks_cache",
+          "id": "q5_cache_blocks",
           "label": "Number of blocks in the cache",
           "answers": [
             "24"
@@ -817,7 +817,7 @@
           "show": "8"
         },
         {
-          "id": "q5_blocks_mem",
+          "id": "q5_mem_blocks",
           "label": "Number of blocks in the memory",
           "answers": [
             "128"
@@ -853,10 +853,10 @@
       "columns": [
         "Word Address in Hex",
         "Word Address in Binary",
-        "Tag",
-        "Set Index",
-        "Offset",
-        "Hit/Miss",
+        "Tag in Binary",
+        "Set Index in Binary",
+        "Offset in Binary",
+        "Hit or Miss",
         "Way 0",
         "Way 1",
         "Way 2"
@@ -866,7 +866,7 @@
           "addr": "0x03",
           "cells": [
             {
-              "id": "q5_03_bin_0",
+              "id": "q5_0_bin",
               "label": "Word address in binary",
               "answers": [
                 "00000011"
@@ -877,7 +877,7 @@
               "show": "00000011"
             },
             {
-              "id": "q5_03_tag_0",
+              "id": "q5_0_tag",
               "label": "Tag in binary",
               "answers": [
                 "0000"
@@ -888,7 +888,7 @@
               "show": "0000"
             },
             {
-              "id": "q5_03_idx_0",
+              "id": "q5_0_idx",
               "label": "Set index in binary",
               "answers": [
                 "001"
@@ -899,7 +899,7 @@
               "show": "001"
             },
             {
-              "id": "q5_03_off_0",
+              "id": "q5_0_off",
               "label": "Offset in binary",
               "answers": [
                 "1"
@@ -910,26 +910,23 @@
               "show": "1"
             },
             {
-              "id": "q5_03_hm_0",
-              "label": "Hit/Miss",
+              "id": "q5_0_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
             },
             [
               {
-                "id": "q5_0_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r0_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -945,7 +942,7 @@
           "addr": "0xb4",
           "cells": [
             {
-              "id": "q5_b4_bin_1",
+              "id": "q5_1_bin",
               "label": "Word address in binary",
               "answers": [
                 "10110100"
@@ -956,7 +953,7 @@
               "show": "10110100"
             },
             {
-              "id": "q5_b4_tag_1",
+              "id": "q5_1_tag",
               "label": "Tag in binary",
               "answers": [
                 "1011"
@@ -967,7 +964,7 @@
               "show": "1011"
             },
             {
-              "id": "q5_b4_idx_1",
+              "id": "q5_1_idx",
               "label": "Set index in binary",
               "answers": [
                 "010"
@@ -978,7 +975,7 @@
               "show": "010"
             },
             {
-              "id": "q5_b4_off_1",
+              "id": "q5_1_off",
               "label": "Offset in binary",
               "answers": [
                 "0"
@@ -989,26 +986,23 @@
               "show": "0"
             },
             {
-              "id": "q5_b4_hm_1",
-              "label": "Hit/Miss",
+              "id": "q5_1_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
             },
             [
               {
-                "id": "q5_1_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r1_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1016,13 +1010,10 @@
                 "show": "T(001)=0000"
               },
               {
-                "id": "q5_1_way0_1",
-                "label": "T(010)=1011",
+                "id": "q5_r1_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(010)=1011",
-                  "T(010) = 1011",
-                  "t(010)=1011",
-                  "t(010) = 1011"
+                  "T(010)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1038,7 +1029,7 @@
           "addr": "0x2b",
           "cells": [
             {
-              "id": "q5_2b_bin_2",
+              "id": "q5_2_bin",
               "label": "Word address in binary",
               "answers": [
                 "00101011"
@@ -1049,7 +1040,7 @@
               "show": "00101011"
             },
             {
-              "id": "q5_2b_tag_2",
+              "id": "q5_2_tag",
               "label": "Tag in binary",
               "answers": [
                 "0010"
@@ -1060,7 +1051,7 @@
               "show": "0010"
             },
             {
-              "id": "q5_2b_idx_2",
+              "id": "q5_2_idx",
               "label": "Set index in binary",
               "answers": [
                 "101"
@@ -1071,7 +1062,7 @@
               "show": "101"
             },
             {
-              "id": "q5_2b_off_2",
+              "id": "q5_2_off",
               "label": "Offset in binary",
               "answers": [
                 "1"
@@ -1082,26 +1073,23 @@
               "show": "1"
             },
             {
-              "id": "q5_2b_hm_2",
-              "label": "Hit/Miss",
+              "id": "q5_2_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
             },
             [
               {
-                "id": "q5_2_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r2_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1109,13 +1097,10 @@
                 "show": "T(001)=0000"
               },
               {
-                "id": "q5_2_way0_1",
-                "label": "T(010)=1011",
+                "id": "q5_r2_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(010)=1011",
-                  "T(010) = 1011",
-                  "t(010)=1011",
-                  "t(010) = 1011"
+                  "T(010)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1123,13 +1108,10 @@
                 "show": "T(010)=1011"
               },
               {
-                "id": "q5_2_way0_2",
-                "label": "T(101)=0010",
+                "id": "q5_r2_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
-                  "T(101)=0010",
-                  "T(101) = 0010",
-                  "t(101)=0010",
-                  "t(101) = 0010"
+                  "T(101)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1145,7 +1127,7 @@
           "addr": "0x02",
           "cells": [
             {
-              "id": "q5_02_bin_3",
+              "id": "q5_3_bin",
               "label": "Word address in binary",
               "answers": [
                 "00000010"
@@ -1156,7 +1138,7 @@
               "show": "00000010"
             },
             {
-              "id": "q5_02_tag_3",
+              "id": "q5_3_tag",
               "label": "Tag in binary",
               "answers": [
                 "0000"
@@ -1167,7 +1149,7 @@
               "show": "0000"
             },
             {
-              "id": "q5_02_idx_3",
+              "id": "q5_3_idx",
               "label": "Set index in binary",
               "answers": [
                 "001"
@@ -1178,7 +1160,7 @@
               "show": "001"
             },
             {
-              "id": "q5_02_off_3",
+              "id": "q5_3_off",
               "label": "Offset in binary",
               "answers": [
                 "0"
@@ -1189,26 +1171,23 @@
               "show": "0"
             },
             {
-              "id": "q5_02_hm_3",
-              "label": "Hit/Miss",
+              "id": "q5_3_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "H",
-                "h"
+                "hit"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "H"
             },
             [
               {
-                "id": "q5_3_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r3_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1216,13 +1195,10 @@
                 "show": "T(001)=0000"
               },
               {
-                "id": "q5_3_way0_1",
-                "label": "T(010)=1011",
+                "id": "q5_r3_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(010)=1011",
-                  "T(010) = 1011",
-                  "t(010)=1011",
-                  "t(010) = 1011"
+                  "T(010)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1230,13 +1206,10 @@
                 "show": "T(010)=1011"
               },
               {
-                "id": "q5_3_way0_2",
-                "label": "T(101)=0010",
+                "id": "q5_r3_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
-                  "T(101)=0010",
-                  "T(101) = 0010",
-                  "t(101)=0010",
-                  "t(101) = 0010"
+                  "T(101)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1252,7 +1225,7 @@
           "addr": "0xbe",
           "cells": [
             {
-              "id": "q5_be_bin_4",
+              "id": "q5_4_bin",
               "label": "Word address in binary",
               "answers": [
                 "10111110"
@@ -1263,7 +1236,7 @@
               "show": "10111110"
             },
             {
-              "id": "q5_be_tag_4",
+              "id": "q5_4_tag",
               "label": "Tag in binary",
               "answers": [
                 "1011"
@@ -1274,7 +1247,7 @@
               "show": "1011"
             },
             {
-              "id": "q5_be_idx_4",
+              "id": "q5_4_idx",
               "label": "Set index in binary",
               "answers": [
                 "111"
@@ -1285,7 +1258,7 @@
               "show": "111"
             },
             {
-              "id": "q5_be_off_4",
+              "id": "q5_4_off",
               "label": "Offset in binary",
               "answers": [
                 "0"
@@ -1296,26 +1269,23 @@
               "show": "0"
             },
             {
-              "id": "q5_be_hm_4",
-              "label": "Hit/Miss",
+              "id": "q5_4_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
             },
             [
               {
-                "id": "q5_4_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r4_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1323,13 +1293,10 @@
                 "show": "T(001)=0000"
               },
               {
-                "id": "q5_4_way0_1",
-                "label": "T(010)=1011",
+                "id": "q5_r4_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(010)=1011",
-                  "T(010) = 1011",
-                  "t(010)=1011",
-                  "t(010) = 1011"
+                  "T(010)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1337,13 +1304,10 @@
                 "show": "T(010)=1011"
               },
               {
-                "id": "q5_4_way0_2",
-                "label": "T(101)=0010",
+                "id": "q5_r4_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
-                  "T(101)=0010",
-                  "T(101) = 0010",
-                  "t(101)=0010",
-                  "t(101) = 0010"
+                  "T(101)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1351,13 +1315,10 @@
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_4_way0_3",
-                "label": "T(111)=1011",
+                "id": "q5_r4_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
-                  "T(111)=1011",
-                  "T(111) = 1011",
-                  "t(111)=1011",
-                  "t(111) = 1011"
+                  "T(111)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1373,7 +1334,7 @@
           "addr": "0x58",
           "cells": [
             {
-              "id": "q5_58_bin_5",
+              "id": "q5_5_bin",
               "label": "Word address in binary",
               "answers": [
                 "01011000"
@@ -1384,7 +1345,7 @@
               "show": "01011000"
             },
             {
-              "id": "q5_58_tag_5",
+              "id": "q5_5_tag",
               "label": "Tag in binary",
               "answers": [
                 "0101"
@@ -1395,7 +1356,7 @@
               "show": "0101"
             },
             {
-              "id": "q5_58_idx_5",
+              "id": "q5_5_idx",
               "label": "Set index in binary",
               "answers": [
                 "100"
@@ -1406,7 +1367,7 @@
               "show": "100"
             },
             {
-              "id": "q5_58_off_5",
+              "id": "q5_5_off",
               "label": "Offset in binary",
               "answers": [
                 "0"
@@ -1417,26 +1378,23 @@
               "show": "0"
             },
             {
-              "id": "q5_58_hm_5",
-              "label": "Hit/Miss",
+              "id": "q5_5_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
             },
             [
               {
-                "id": "q5_5_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r5_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1444,13 +1402,10 @@
                 "show": "T(001)=0000"
               },
               {
-                "id": "q5_5_way0_1",
-                "label": "T(010)=1011",
+                "id": "q5_r5_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(010)=1011",
-                  "T(010) = 1011",
-                  "t(010)=1011",
-                  "t(010) = 1011"
+                  "T(010)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1458,13 +1413,10 @@
                 "show": "T(010)=1011"
               },
               {
-                "id": "q5_5_way0_2",
-                "label": "T(100)=0101",
+                "id": "q5_r5_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101",
-                  "T(100) = 0101",
-                  "t(100)=0101",
-                  "t(100) = 0101"
+                  "T(100)=0101"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1472,13 +1424,10 @@
                 "show": "T(100)=0101"
               },
               {
-                "id": "q5_5_way0_3",
-                "label": "T(101)=0010",
+                "id": "q5_r5_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
-                  "T(101)=0010",
-                  "T(101) = 0010",
-                  "t(101)=0010",
-                  "t(101) = 0010"
+                  "T(101)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1486,13 +1435,10 @@
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_5_way0_4",
-                "label": "T(111)=1011",
+                "id": "q5_r5_w0_4",
+                "label": "Way 0 line 5",
                 "answers": [
-                  "T(111)=1011",
-                  "T(111) = 1011",
-                  "t(111)=1011",
-                  "t(111) = 1011"
+                  "T(111)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1508,7 +1454,7 @@
           "addr": "0xbf",
           "cells": [
             {
-              "id": "q5_bf_bin_6",
+              "id": "q5_6_bin",
               "label": "Word address in binary",
               "answers": [
                 "10111111"
@@ -1519,7 +1465,7 @@
               "show": "10111111"
             },
             {
-              "id": "q5_bf_tag_6",
+              "id": "q5_6_tag",
               "label": "Tag in binary",
               "answers": [
                 "1011"
@@ -1530,7 +1476,7 @@
               "show": "1011"
             },
             {
-              "id": "q5_bf_idx_6",
+              "id": "q5_6_idx",
               "label": "Set index in binary",
               "answers": [
                 "111"
@@ -1541,7 +1487,7 @@
               "show": "111"
             },
             {
-              "id": "q5_bf_off_6",
+              "id": "q5_6_off",
               "label": "Offset in binary",
               "answers": [
                 "1"
@@ -1552,26 +1498,23 @@
               "show": "1"
             },
             {
-              "id": "q5_bf_hm_6",
-              "label": "Hit/Miss",
+              "id": "q5_6_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "H",
-                "h"
+                "hit"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "H"
             },
             [
               {
-                "id": "q5_6_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r6_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1579,13 +1522,10 @@
                 "show": "T(001)=0000"
               },
               {
-                "id": "q5_6_way0_1",
-                "label": "T(010)=1011",
+                "id": "q5_r6_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(010)=1011",
-                  "T(010) = 1011",
-                  "t(010)=1011",
-                  "t(010) = 1011"
+                  "T(010)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1593,13 +1533,10 @@
                 "show": "T(010)=1011"
               },
               {
-                "id": "q5_6_way0_2",
-                "label": "T(100)=0101",
+                "id": "q5_r6_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101",
-                  "T(100) = 0101",
-                  "t(100)=0101",
-                  "t(100) = 0101"
+                  "T(100)=0101"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1607,13 +1544,10 @@
                 "show": "T(100)=0101"
               },
               {
-                "id": "q5_6_way0_3",
-                "label": "T(101)=0010",
+                "id": "q5_r6_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
-                  "T(101)=0010",
-                  "T(101) = 0010",
-                  "t(101)=0010",
-                  "t(101) = 0010"
+                  "T(101)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1621,13 +1555,10 @@
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_6_way0_4",
-                "label": "T(111)=1011",
+                "id": "q5_r6_w0_4",
+                "label": "Way 0 line 5",
                 "answers": [
-                  "T(111)=1011",
-                  "T(111) = 1011",
-                  "t(111)=1011",
-                  "t(111) = 1011"
+                  "T(111)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1643,7 +1574,7 @@
           "addr": "0x0e",
           "cells": [
             {
-              "id": "q5_0e_bin_7",
+              "id": "q5_7_bin",
               "label": "Word address in binary",
               "answers": [
                 "00001110"
@@ -1654,7 +1585,7 @@
               "show": "00001110"
             },
             {
-              "id": "q5_0e_tag_7",
+              "id": "q5_7_tag",
               "label": "Tag in binary",
               "answers": [
                 "0000"
@@ -1665,7 +1596,7 @@
               "show": "0000"
             },
             {
-              "id": "q5_0e_idx_7",
+              "id": "q5_7_idx",
               "label": "Set index in binary",
               "answers": [
                 "111"
@@ -1676,7 +1607,7 @@
               "show": "111"
             },
             {
-              "id": "q5_0e_off_7",
+              "id": "q5_7_off",
               "label": "Offset in binary",
               "answers": [
                 "0"
@@ -1687,26 +1618,23 @@
               "show": "0"
             },
             {
-              "id": "q5_0e_hm_7",
-              "label": "Hit/Miss",
+              "id": "q5_7_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
             },
             [
               {
-                "id": "q5_7_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r7_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1714,13 +1642,10 @@
                 "show": "T(001)=0000"
               },
               {
-                "id": "q5_7_way0_1",
-                "label": "T(010)=1011",
+                "id": "q5_r7_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(010)=1011",
-                  "T(010) = 1011",
-                  "t(010)=1011",
-                  "t(010) = 1011"
+                  "T(010)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1728,13 +1653,10 @@
                 "show": "T(010)=1011"
               },
               {
-                "id": "q5_7_way0_2",
-                "label": "T(100)=0101",
+                "id": "q5_r7_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101",
-                  "T(100) = 0101",
-                  "t(100)=0101",
-                  "t(100) = 0101"
+                  "T(100)=0101"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1742,13 +1664,10 @@
                 "show": "T(100)=0101"
               },
               {
-                "id": "q5_7_way0_3",
-                "label": "T(101)=0010",
+                "id": "q5_r7_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
-                  "T(101)=0010",
-                  "T(101) = 0010",
-                  "t(101)=0010",
-                  "t(101) = 0010"
+                  "T(101)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1756,13 +1675,10 @@
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_7_way0_4",
-                "label": "T(111)=1011",
+                "id": "q5_r7_w0_4",
+                "label": "Way 0 line 5",
                 "answers": [
-                  "T(111)=1011",
-                  "T(111) = 1011",
-                  "t(111)=1011",
-                  "t(111) = 1011"
+                  "T(111)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1772,13 +1688,10 @@
             ],
             [
               {
-                "id": "q5_7_way1_0",
-                "label": "T(111)=0000",
+                "id": "q5_r7_w1_0",
+                "label": "Way 1 line 1",
                 "answers": [
-                  "T(111)=0000",
-                  "T(111) = 0000",
-                  "t(111)=0000",
-                  "t(111) = 0000"
+                  "T(111)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1793,7 +1706,7 @@
           "addr": "0x1f",
           "cells": [
             {
-              "id": "q5_1f_bin_8",
+              "id": "q5_8_bin",
               "label": "Word address in binary",
               "answers": [
                 "00011111"
@@ -1804,7 +1717,7 @@
               "show": "00011111"
             },
             {
-              "id": "q5_1f_tag_8",
+              "id": "q5_8_tag",
               "label": "Tag in binary",
               "answers": [
                 "0001"
@@ -1815,7 +1728,7 @@
               "show": "0001"
             },
             {
-              "id": "q5_1f_idx_8",
+              "id": "q5_8_idx",
               "label": "Set index in binary",
               "answers": [
                 "111"
@@ -1826,7 +1739,7 @@
               "show": "111"
             },
             {
-              "id": "q5_1f_off_8",
+              "id": "q5_8_off",
               "label": "Offset in binary",
               "answers": [
                 "1"
@@ -1837,26 +1750,23 @@
               "show": "1"
             },
             {
-              "id": "q5_1f_hm_8",
-              "label": "Hit/Miss",
+              "id": "q5_8_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
             },
             [
               {
-                "id": "q5_8_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r8_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1864,13 +1774,10 @@
                 "show": "T(001)=0000"
               },
               {
-                "id": "q5_8_way0_1",
-                "label": "T(010)=1011",
+                "id": "q5_r8_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(010)=1011",
-                  "T(010) = 1011",
-                  "t(010)=1011",
-                  "t(010) = 1011"
+                  "T(010)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1878,13 +1785,10 @@
                 "show": "T(010)=1011"
               },
               {
-                "id": "q5_8_way0_2",
-                "label": "T(100)=0101",
+                "id": "q5_r8_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101",
-                  "T(100) = 0101",
-                  "t(100)=0101",
-                  "t(100) = 0101"
+                  "T(100)=0101"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1892,13 +1796,10 @@
                 "show": "T(100)=0101"
               },
               {
-                "id": "q5_8_way0_3",
-                "label": "T(101)=0010",
+                "id": "q5_r8_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
-                  "T(101)=0010",
-                  "T(101) = 0010",
-                  "t(101)=0010",
-                  "t(101) = 0010"
+                  "T(101)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1906,13 +1807,10 @@
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_8_way0_4",
-                "label": "T(111)=1011",
+                "id": "q5_r8_w0_4",
+                "label": "Way 0 line 5",
                 "answers": [
-                  "T(111)=1011",
-                  "T(111) = 1011",
-                  "t(111)=1011",
-                  "t(111) = 1011"
+                  "T(111)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1922,13 +1820,10 @@
             ],
             [
               {
-                "id": "q5_8_way1_0",
-                "label": "T(111)=0000",
+                "id": "q5_r8_w1_0",
+                "label": "Way 1 line 1",
                 "answers": [
-                  "T(111)=0000",
-                  "T(111) = 0000",
-                  "t(111)=0000",
-                  "t(111) = 0000"
+                  "T(111)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1938,13 +1833,10 @@
             ],
             [
               {
-                "id": "q5_8_way2_0",
-                "label": "T(111)=0001",
+                "id": "q5_r8_w2_0",
+                "label": "Way 2 line 1",
                 "answers": [
-                  "T(111)=0001",
-                  "T(111) = 0001",
-                  "t(111)=0001",
-                  "t(111) = 0001"
+                  "T(111)=0001"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -1958,7 +1850,7 @@
           "addr": "0xb5",
           "cells": [
             {
-              "id": "q5_b5_bin_9",
+              "id": "q5_9_bin",
               "label": "Word address in binary",
               "answers": [
                 "10110101"
@@ -1969,7 +1861,7 @@
               "show": "10110101"
             },
             {
-              "id": "q5_b5_tag_9",
+              "id": "q5_9_tag",
               "label": "Tag in binary",
               "answers": [
                 "1011"
@@ -1980,7 +1872,7 @@
               "show": "1011"
             },
             {
-              "id": "q5_b5_idx_9",
+              "id": "q5_9_idx",
               "label": "Set index in binary",
               "answers": [
                 "010"
@@ -1991,7 +1883,7 @@
               "show": "010"
             },
             {
-              "id": "q5_b5_off_9",
+              "id": "q5_9_off",
               "label": "Offset in binary",
               "answers": [
                 "1"
@@ -2002,26 +1894,23 @@
               "show": "1"
             },
             {
-              "id": "q5_b5_hm_9",
-              "label": "Hit/Miss",
+              "id": "q5_9_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "H",
-                "h"
+                "hit"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "H"
             },
             [
               {
-                "id": "q5_9_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r9_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2029,13 +1918,10 @@
                 "show": "T(001)=0000"
               },
               {
-                "id": "q5_9_way0_1",
-                "label": "T(010)=1011",
+                "id": "q5_r9_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(010)=1011",
-                  "T(010) = 1011",
-                  "t(010)=1011",
-                  "t(010) = 1011"
+                  "T(010)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2043,13 +1929,10 @@
                 "show": "T(010)=1011"
               },
               {
-                "id": "q5_9_way0_2",
-                "label": "T(100)=0101",
+                "id": "q5_r9_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101",
-                  "T(100) = 0101",
-                  "t(100)=0101",
-                  "t(100) = 0101"
+                  "T(100)=0101"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2057,13 +1940,10 @@
                 "show": "T(100)=0101"
               },
               {
-                "id": "q5_9_way0_3",
-                "label": "T(101)=0010",
+                "id": "q5_r9_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
-                  "T(101)=0010",
-                  "T(101) = 0010",
-                  "t(101)=0010",
-                  "t(101) = 0010"
+                  "T(101)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2071,13 +1951,10 @@
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_9_way0_4",
-                "label": "T(111)=1011",
+                "id": "q5_r9_w0_4",
+                "label": "Way 0 line 5",
                 "answers": [
-                  "T(111)=1011",
-                  "T(111) = 1011",
-                  "t(111)=1011",
-                  "t(111) = 1011"
+                  "T(111)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2087,13 +1964,10 @@
             ],
             [
               {
-                "id": "q5_9_way1_0",
-                "label": "T(111)=0000",
+                "id": "q5_r9_w1_0",
+                "label": "Way 1 line 1",
                 "answers": [
-                  "T(111)=0000",
-                  "T(111) = 0000",
-                  "t(111)=0000",
-                  "t(111) = 0000"
+                  "T(111)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2103,13 +1977,10 @@
             ],
             [
               {
-                "id": "q5_9_way2_0",
-                "label": "T(111)=0001",
+                "id": "q5_r9_w2_0",
+                "label": "Way 2 line 1",
                 "answers": [
-                  "T(111)=0001",
-                  "T(111) = 0001",
-                  "t(111)=0001",
-                  "t(111) = 0001"
+                  "T(111)=0001"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2123,7 +1994,7 @@
           "addr": "0xbf",
           "cells": [
             {
-              "id": "q5_bf_bin_10",
+              "id": "q5_10_bin",
               "label": "Word address in binary",
               "answers": [
                 "10111111"
@@ -2134,7 +2005,7 @@
               "show": "10111111"
             },
             {
-              "id": "q5_bf_tag_10",
+              "id": "q5_10_tag",
               "label": "Tag in binary",
               "answers": [
                 "1011"
@@ -2145,7 +2016,7 @@
               "show": "1011"
             },
             {
-              "id": "q5_bf_idx_10",
+              "id": "q5_10_idx",
               "label": "Set index in binary",
               "answers": [
                 "111"
@@ -2156,7 +2027,7 @@
               "show": "111"
             },
             {
-              "id": "q5_bf_off_10",
+              "id": "q5_10_off",
               "label": "Offset in binary",
               "answers": [
                 "1"
@@ -2167,26 +2038,23 @@
               "show": "1"
             },
             {
-              "id": "q5_bf_hm_10",
-              "label": "Hit/Miss",
+              "id": "q5_10_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "H",
-                "h"
+                "hit"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "H"
             },
             [
               {
-                "id": "q5_10_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r10_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2194,13 +2062,10 @@
                 "show": "T(001)=0000"
               },
               {
-                "id": "q5_10_way0_1",
-                "label": "T(010)=1011",
+                "id": "q5_r10_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(010)=1011",
-                  "T(010) = 1011",
-                  "t(010)=1011",
-                  "t(010) = 1011"
+                  "T(010)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2208,13 +2073,10 @@
                 "show": "T(010)=1011"
               },
               {
-                "id": "q5_10_way0_2",
-                "label": "T(100)=0101",
+                "id": "q5_r10_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101",
-                  "T(100) = 0101",
-                  "t(100)=0101",
-                  "t(100) = 0101"
+                  "T(100)=0101"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2222,13 +2084,10 @@
                 "show": "T(100)=0101"
               },
               {
-                "id": "q5_10_way0_3",
-                "label": "T(101)=0010",
+                "id": "q5_r10_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
-                  "T(101)=0010",
-                  "T(101) = 0010",
-                  "t(101)=0010",
-                  "t(101) = 0010"
+                  "T(101)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2236,13 +2095,10 @@
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_10_way0_4",
-                "label": "T(111)=1011",
+                "id": "q5_r10_w0_4",
+                "label": "Way 0 line 5",
                 "answers": [
-                  "T(111)=1011",
-                  "T(111) = 1011",
-                  "t(111)=1011",
-                  "t(111) = 1011"
+                  "T(111)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2252,13 +2108,10 @@
             ],
             [
               {
-                "id": "q5_10_way1_0",
-                "label": "T(111)=0000",
+                "id": "q5_r10_w1_0",
+                "label": "Way 1 line 1",
                 "answers": [
-                  "T(111)=0000",
-                  "T(111) = 0000",
-                  "t(111)=0000",
-                  "t(111) = 0000"
+                  "T(111)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2268,13 +2121,10 @@
             ],
             [
               {
-                "id": "q5_10_way2_0",
-                "label": "T(111)=0001",
+                "id": "q5_r10_w2_0",
+                "label": "Way 2 line 1",
                 "answers": [
-                  "T(111)=0001",
-                  "T(111) = 0001",
-                  "t(111)=0001",
-                  "t(111) = 0001"
+                  "T(111)=0001"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2288,7 +2138,7 @@
           "addr": "0xba",
           "cells": [
             {
-              "id": "q5_ba_bin_11",
+              "id": "q5_11_bin",
               "label": "Word address in binary",
               "answers": [
                 "10111010"
@@ -2299,7 +2149,7 @@
               "show": "10111010"
             },
             {
-              "id": "q5_ba_tag_11",
+              "id": "q5_11_tag",
               "label": "Tag in binary",
               "answers": [
                 "1011"
@@ -2310,7 +2160,7 @@
               "show": "1011"
             },
             {
-              "id": "q5_ba_idx_11",
+              "id": "q5_11_idx",
               "label": "Set index in binary",
               "answers": [
                 "101"
@@ -2321,7 +2171,7 @@
               "show": "101"
             },
             {
-              "id": "q5_ba_off_11",
+              "id": "q5_11_off",
               "label": "Offset in binary",
               "answers": [
                 "0"
@@ -2332,26 +2182,23 @@
               "show": "0"
             },
             {
-              "id": "q5_ba_hm_11",
-              "label": "Hit/Miss",
+              "id": "q5_11_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
             },
             [
               {
-                "id": "q5_11_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r11_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2359,13 +2206,10 @@
                 "show": "T(001)=0000"
               },
               {
-                "id": "q5_11_way0_1",
-                "label": "T(010)=1011",
+                "id": "q5_r11_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(010)=1011",
-                  "T(010) = 1011",
-                  "t(010)=1011",
-                  "t(010) = 1011"
+                  "T(010)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2373,13 +2217,10 @@
                 "show": "T(010)=1011"
               },
               {
-                "id": "q5_11_way0_2",
-                "label": "T(100)=0101",
+                "id": "q5_r11_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101",
-                  "T(100) = 0101",
-                  "t(100)=0101",
-                  "t(100) = 0101"
+                  "T(100)=0101"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2387,13 +2228,10 @@
                 "show": "T(100)=0101"
               },
               {
-                "id": "q5_11_way0_3",
-                "label": "T(101)=0010",
+                "id": "q5_r11_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
-                  "T(101)=0010",
-                  "T(101) = 0010",
-                  "t(101)=0010",
-                  "t(101) = 0010"
+                  "T(101)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2401,13 +2239,10 @@
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_11_way0_4",
-                "label": "T(111)=1011",
+                "id": "q5_r11_w0_4",
+                "label": "Way 0 line 5",
                 "answers": [
-                  "T(111)=1011",
-                  "T(111) = 1011",
-                  "t(111)=1011",
-                  "t(111) = 1011"
+                  "T(111)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2417,13 +2252,10 @@
             ],
             [
               {
-                "id": "q5_11_way1_0",
-                "label": "T(101)=1011",
+                "id": "q5_r11_w1_0",
+                "label": "Way 1 line 1",
                 "answers": [
-                  "T(101)=1011",
-                  "T(101) = 1011",
-                  "t(101)=1011",
-                  "t(101) = 1011"
+                  "T(101)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2431,13 +2263,10 @@
                 "show": "T(101)=1011"
               },
               {
-                "id": "q5_11_way1_1",
-                "label": "T(111)=0000",
+                "id": "q5_r11_w1_1",
+                "label": "Way 1 line 2",
                 "answers": [
-                  "T(111)=0000",
-                  "T(111) = 0000",
-                  "t(111)=0000",
-                  "t(111) = 0000"
+                  "T(111)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2447,13 +2276,10 @@
             ],
             [
               {
-                "id": "q5_11_way2_0",
-                "label": "T(111)=0001",
+                "id": "q5_r11_w2_0",
+                "label": "Way 2 line 1",
                 "answers": [
-                  "T(111)=0001",
-                  "T(111) = 0001",
-                  "t(111)=0001",
-                  "t(111) = 0001"
+                  "T(111)=0001"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2467,7 +2293,7 @@
           "addr": "0x2e",
           "cells": [
             {
-              "id": "q5_2e_bin_12",
+              "id": "q5_12_bin",
               "label": "Word address in binary",
               "answers": [
                 "00101110"
@@ -2478,7 +2304,7 @@
               "show": "00101110"
             },
             {
-              "id": "q5_2e_tag_12",
+              "id": "q5_12_tag",
               "label": "Tag in binary",
               "answers": [
                 "0010"
@@ -2489,7 +2315,7 @@
               "show": "0010"
             },
             {
-              "id": "q5_2e_idx_12",
+              "id": "q5_12_idx",
               "label": "Set index in binary",
               "answers": [
                 "111"
@@ -2500,7 +2326,7 @@
               "show": "111"
             },
             {
-              "id": "q5_2e_off_12",
+              "id": "q5_12_off",
               "label": "Offset in binary",
               "answers": [
                 "0"
@@ -2511,26 +2337,23 @@
               "show": "0"
             },
             {
-              "id": "q5_2e_hm_12",
-              "label": "Hit/Miss",
+              "id": "q5_12_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
             },
             [
               {
-                "id": "q5_12_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r12_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2538,13 +2361,10 @@
                 "show": "T(001)=0000"
               },
               {
-                "id": "q5_12_way0_1",
-                "label": "T(010)=1011",
+                "id": "q5_r12_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(010)=1011",
-                  "T(010) = 1011",
-                  "t(010)=1011",
-                  "t(010) = 1011"
+                  "T(010)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2552,13 +2372,10 @@
                 "show": "T(010)=1011"
               },
               {
-                "id": "q5_12_way0_2",
-                "label": "T(100)=0101",
+                "id": "q5_r12_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101",
-                  "T(100) = 0101",
-                  "t(100)=0101",
-                  "t(100) = 0101"
+                  "T(100)=0101"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2566,13 +2383,10 @@
                 "show": "T(100)=0101"
               },
               {
-                "id": "q5_12_way0_3",
-                "label": "T(101)=0010",
+                "id": "q5_r12_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
-                  "T(101)=0010",
-                  "T(101) = 0010",
-                  "t(101)=0010",
-                  "t(101) = 0010"
+                  "T(101)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2580,13 +2394,10 @@
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_12_way0_4",
-                "label": "T(111)=1011",
+                "id": "q5_r12_w0_4",
+                "label": "Way 0 line 5",
                 "answers": [
-                  "T(111)=1011",
-                  "T(111) = 1011",
-                  "t(111)=1011",
-                  "t(111) = 1011"
+                  "T(111)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2596,13 +2407,10 @@
             ],
             [
               {
-                "id": "q5_12_way1_0",
-                "label": "T(101)=1011",
+                "id": "q5_r12_w1_0",
+                "label": "Way 1 line 1",
                 "answers": [
-                  "T(101)=1011",
-                  "T(101) = 1011",
-                  "t(101)=1011",
-                  "t(101) = 1011"
+                  "T(101)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2610,13 +2418,10 @@
                 "show": "T(101)=1011"
               },
               {
-                "id": "q5_12_way1_1",
-                "label": "T(111)=0010",
+                "id": "q5_r12_w1_1",
+                "label": "Way 1 line 2",
                 "answers": [
-                  "T(111)=0010",
-                  "T(111) = 0010",
-                  "t(111)=0010",
-                  "t(111) = 0010"
+                  "T(111)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2626,13 +2431,10 @@
             ],
             [
               {
-                "id": "q5_12_way2_0",
-                "label": "T(111)=0001",
+                "id": "q5_r12_w2_0",
+                "label": "Way 2 line 1",
                 "answers": [
-                  "T(111)=0001",
-                  "T(111) = 0001",
-                  "t(111)=0001",
-                  "t(111) = 0001"
+                  "T(111)=0001"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2646,7 +2448,7 @@
           "addr": "0xce",
           "cells": [
             {
-              "id": "q5_ce_bin_13",
+              "id": "q5_13_bin",
               "label": "Word address in binary",
               "answers": [
                 "11001110"
@@ -2657,7 +2459,7 @@
               "show": "11001110"
             },
             {
-              "id": "q5_ce_tag_13",
+              "id": "q5_13_tag",
               "label": "Tag in binary",
               "answers": [
                 "1100"
@@ -2668,7 +2470,7 @@
               "show": "1100"
             },
             {
-              "id": "q5_ce_idx_13",
+              "id": "q5_13_idx",
               "label": "Set index in binary",
               "answers": [
                 "111"
@@ -2679,7 +2481,7 @@
               "show": "111"
             },
             {
-              "id": "q5_ce_off_13",
+              "id": "q5_13_off",
               "label": "Offset in binary",
               "answers": [
                 "0"
@@ -2690,26 +2492,23 @@
               "show": "0"
             },
             {
-              "id": "q5_ce_hm_13",
-              "label": "Hit/Miss",
+              "id": "q5_13_hm",
+              "label": "Hit or Miss",
               "answers": [
                 "M",
-                "m"
+                "miss"
               ],
-              "type": "symbol",
+              "type": "text",
               "unit": "",
               "hint": "",
               "show": "M"
             },
             [
               {
-                "id": "q5_13_way0_0",
-                "label": "T(001)=0000",
+                "id": "q5_r13_w0_0",
+                "label": "Way 0 line 1",
                 "answers": [
-                  "T(001)=0000",
-                  "T(001) = 0000",
-                  "t(001)=0000",
-                  "t(001) = 0000"
+                  "T(001)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2717,13 +2516,10 @@
                 "show": "T(001)=0000"
               },
               {
-                "id": "q5_13_way0_1",
-                "label": "T(010)=1011",
+                "id": "q5_r13_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(010)=1011",
-                  "T(010) = 1011",
-                  "t(010)=1011",
-                  "t(010) = 1011"
+                  "T(010)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2731,13 +2527,10 @@
                 "show": "T(010)=1011"
               },
               {
-                "id": "q5_13_way0_2",
-                "label": "T(100)=0101",
+                "id": "q5_r13_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101",
-                  "T(100) = 0101",
-                  "t(100)=0101",
-                  "t(100) = 0101"
+                  "T(100)=0101"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2745,13 +2538,10 @@
                 "show": "T(100)=0101"
               },
               {
-                "id": "q5_13_way0_3",
-                "label": "T(101)=0010",
+                "id": "q5_r13_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
-                  "T(101)=0010",
-                  "T(101) = 0010",
-                  "t(101)=0010",
-                  "t(101) = 0010"
+                  "T(101)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2759,13 +2549,10 @@
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_13_way0_4",
-                "label": "T(111)=1011",
+                "id": "q5_r13_w0_4",
+                "label": "Way 0 line 5",
                 "answers": [
-                  "T(111)=1011",
-                  "T(111) = 1011",
-                  "t(111)=1011",
-                  "t(111) = 1011"
+                  "T(111)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2775,13 +2562,10 @@
             ],
             [
               {
-                "id": "q5_13_way1_0",
-                "label": "T(101)=1011",
+                "id": "q5_r13_w1_0",
+                "label": "Way 1 line 1",
                 "answers": [
-                  "T(101)=1011",
-                  "T(101) = 1011",
-                  "t(101)=1011",
-                  "t(101) = 1011"
+                  "T(101)=1011"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2789,13 +2573,10 @@
                 "show": "T(101)=1011"
               },
               {
-                "id": "q5_13_way1_1",
-                "label": "T(111)=0010",
+                "id": "q5_r13_w1_1",
+                "label": "Way 1 line 2",
                 "answers": [
-                  "T(111)=0010",
-                  "T(111) = 0010",
-                  "t(111)=0010",
-                  "t(111) = 0010"
+                  "T(111)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2805,13 +2586,10 @@
             ],
             [
               {
-                "id": "q5_13_way2_0",
-                "label": "T(111)=1100",
+                "id": "q5_r13_w2_0",
+                "label": "Way 2 line 1",
                 "answers": [
-                  "T(111)=1100",
-                  "T(111) = 1100",
-                  "t(111)=1100",
-                  "t(111) = 1100"
+                  "T(111)=1100"
                 ],
                 "type": "symbol",
                 "unit": "",
@@ -2849,7 +2627,7 @@
           "show": "2"
         }
       ],
-      "solution": "Cache blocks = 48/2 = 24. Since this is 3-way, sets = 24/3 = 8, so index = 3 bits. Block offset = log2(2) = 1 bit. Tag = 8 - 3 - 1 = 4 bits. Memory blocks = 2^8 / 2 = 128. Total bits = 24 × (2×64 data + 4 tag + 1 valid) = 3192 bits. Hits occur at 0x02, 0xbf, 0xb5, and the second 0xbf because they access blocks already loaded in the same set. Replacements occur only when set 111 is full: 0x2e replaces T(111)=0000 in Way 1, then 0xce replaces T(111)=0001 in Way 2."
+      "solution": "Cache blocks = 48/2 = 24. Because this is 3-way, sets = 24/3 = 8, so index = 3 bits. Offset = log2(2) = 1 bit. Tag = 8 - 3 - 1 = 4 bits. Total bits = 24 × (2×64 data + 4 tag + 1 valid) = 3192 bits. Replacements occur only in set 111: 0x2e replaces T(111)=0000 in Way 1, and 0xce replaces T(111)=0001 in Way 2."
     },
     {
       "id": "q6",
@@ -2857,7 +2635,7 @@
       "points": 10,
       "title": "Câu 6 - Single-cycle RISC-V datapath: sw",
       "image": "single_cycle_datapath",
-      "prompt": "Consider a single-cycle RISC-V processor with the simple instruction set: <b>add, sub, and, or, lw, sw, beq</b>.<br><br>\n            Let the processor execute the instruction:<br><code>sw x12, 120(x5)</code><br>\n            at address <b>2000</b>. Suppose the initial value of register <code>xi</code> is <b>20i</b> for i = 1,...,31. Suppose the initial value of memory location with address M is <b>M + 1000</b>.<br><br>\n            Fill out the control signals and signals at locations A, B, C, ..., R.",
+      "prompt": "Consider a single-cycle RISC-V processor with the simple instruction set: <b>add, sub, and, or, lw, sw, beq</b>.<br><br>Let the processor execute the instruction:<br><code>sw x13, 160(x9)</code><br>at address <b>4096</b>. Suppose the initial value of register <code>xi</code> is <b>32i</b> for i = 1,...,31. Suppose the initial value of memory location with address M is <b>M + 500</b>.<br><br>Fill out the control signals and signals at locations A, B, C, ..., R.",
       "fields": [
         {
           "id": "q6_RegWrite",
@@ -2962,56 +2740,56 @@
           "id": "q6_A",
           "label": "A",
           "answers": [
-            "2000"
+            "4096"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2000"
+          "show": "4096"
         },
         {
           "id": "q6_B",
           "label": "B",
           "answers": [
-            "0x06C2AC23"
+            "0x0AD4A023"
           ],
           "type": "hex",
           "unit": "",
           "hint": "",
-          "show": "0x06C2AC23"
+          "show": "0x0AD4A023"
         },
         {
           "id": "q6_C",
           "label": "C",
           "answers": [
-            "00101"
+            "01001"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00101"
+          "show": "01001"
         },
         {
           "id": "q6_D",
           "label": "D",
           "answers": [
-            "01100"
+            "01101"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "01100"
+          "show": "01101"
         },
         {
           "id": "q6_E",
           "label": "E",
           "answers": [
-            "11000"
+            "00000"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "11000"
+          "show": "00000"
         },
         {
           "id": "q6_F",
@@ -3028,67 +2806,67 @@
           "id": "q6_G",
           "label": "G",
           "answers": [
-            "240"
+            "320"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "240"
+          "show": "320"
         },
         {
           "id": "q6_H",
           "label": "H",
           "answers": [
-            "2004"
+            "4100"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2004"
+          "show": "4100"
         },
         {
           "id": "q6_I",
           "label": "I",
           "answers": [
-            "100"
+            "288"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "100"
+          "show": "288"
         },
         {
           "id": "q6_J",
           "label": "J",
           "answers": [
-            "120"
+            "160"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "120"
+          "show": "160"
         },
         {
           "id": "q6_K",
           "label": "K",
           "answers": [
-            "220"
+            "448"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "220"
+          "show": "448"
         },
         {
           "id": "q6_L",
           "label": "L",
           "answers": [
-            "240"
+            "416"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "240"
+          "show": "416"
         },
         {
           "id": "q6_M",
@@ -3116,37 +2894,37 @@
           "id": "q6_P",
           "label": "P",
           "answers": [
-            "2000"
+            "4096"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2000"
+          "show": "4096"
         },
         {
           "id": "q6_Q",
           "label": "Q",
           "answers": [
-            "2004"
+            "4100"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2004"
+          "show": "4100"
         },
         {
           "id": "q6_R",
           "label": "R",
           "answers": [
-            "2240"
+            "4416"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2240"
+          "show": "4416"
         }
       ],
-      "solution": "For sw, the datapath writes to memory, so MemWrite = 1, RegWrite = 0, MemRead = 0. rs1 = x5 = 100, rs2 = x12 = 240, imm = 120, effective address = 100 + 120 = 220. The branch adder still computes PC + (imm << 1) = 2000 + 240 = 2240, although Branch = 0."
+      "solution": "For sw, RegWrite = 0, MemWrite = 1, MemRead = 0, ALUSrc = 1. rs1 = x9 = 288, rs2 = x13 = 416, imm = 160. Effective address = 288 + 160 = 448. The branch adder still computes PC + (imm << 1) = 4096 + 320 = 4416, even though Branch = 0."
     },
     {
       "id": "q7",
@@ -3154,7 +2932,7 @@
       "points": 10,
       "title": "Câu 7 - Single-cycle RISC-V datapath: lw",
       "image": "single_cycle_datapath",
-      "prompt": "Consider the same single-cycle RISC-V processor.<br><br>\n            Let the processor execute the instruction:<br><code>lw x14, 64(x6)</code><br>\n            at address <b>2004</b>. Suppose the initial value of register <code>xi</code> is <b>20i</b> for i = 1,...,31. Suppose the initial value of memory location with address M is <b>M + 1000</b>.",
+      "prompt": "Consider the same single-cycle RISC-V processor.<br><br>Let the processor execute the instruction:<br><code>lw x18, 96(x11)</code><br>at address <b>4100</b>. Suppose the initial value of register <code>xi</code> is <b>32i</b> for i = 1,...,31. Suppose the initial value of memory location with address M is <b>M + 500</b>.",
       "fields": [
         {
           "id": "q7_RegWrite",
@@ -3259,56 +3037,56 @@
           "id": "q7_A",
           "label": "A",
           "answers": [
-            "2004"
+            "4100"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2004"
+          "show": "4100"
         },
         {
           "id": "q7_B",
           "label": "B",
           "answers": [
-            "0x04032703"
+            "0x0605A903"
           ],
           "type": "hex",
           "unit": "",
           "hint": "",
-          "show": "0x04032703"
+          "show": "0x0605A903"
         },
         {
           "id": "q7_C",
           "label": "C",
           "answers": [
-            "00110"
+            "01011"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00110"
+          "show": "01011"
         },
         {
           "id": "q7_D",
           "label": "D",
           "answers": [
-            "00000"
+            "00011"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00000"
+          "show": "00011"
         },
         {
           "id": "q7_E",
           "label": "E",
           "answers": [
-            "01110"
+            "10010"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "01110"
+          "show": "10010"
         },
         {
           "id": "q7_F",
@@ -3325,133 +3103,133 @@
           "id": "q7_G",
           "label": "G",
           "answers": [
-            "128"
+            "192"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "128"
+          "show": "192"
         },
         {
           "id": "q7_H",
           "label": "H",
           "answers": [
-            "2008"
+            "4104"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2008"
+          "show": "4104"
         },
         {
           "id": "q7_I",
           "label": "I",
           "answers": [
-            "120"
+            "352"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "120"
+          "show": "352"
         },
         {
           "id": "q7_J",
           "label": "J",
           "answers": [
-            "64"
+            "96"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "64"
+          "show": "96"
         },
         {
           "id": "q7_K",
           "label": "K",
           "answers": [
-            "184"
+            "448"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "184"
+          "show": "448"
         },
         {
           "id": "q7_L",
           "label": "L",
           "answers": [
-            "0"
+            "96"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "0"
+          "show": "96"
         },
         {
           "id": "q7_M",
           "label": "M",
           "answers": [
-            "1184"
+            "948"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "1184"
+          "show": "948"
         },
         {
           "id": "q7_N",
           "label": "N",
           "answers": [
-            "1184"
+            "948"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "1184"
+          "show": "948"
         },
         {
           "id": "q7_P",
           "label": "P",
           "answers": [
-            "2004"
+            "4100"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2004"
+          "show": "4100"
         },
         {
           "id": "q7_Q",
           "label": "Q",
           "answers": [
-            "2008"
+            "4104"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2008"
+          "show": "4104"
         },
         {
           "id": "q7_R",
           "label": "R",
           "answers": [
-            "2132"
+            "4292"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2132"
+          "show": "4292"
         }
       ],
-      "solution": "For lw, MemRead = 1, MemWrite = 0, RegWrite = 1, MemtoReg = 1. rs1 = x6 = 120, imm = 64, effective address = 184. Data memory returns M + 1000 = 1184, so N = 1184 is written to x14."
+      "solution": "For lw, MemRead = 1, MemWrite = 0, RegWrite = 1, MemtoReg = 1. rs1 = x11 = 352 and imm = 96, so the effective address is 448. Memory returns M + 500 = 948, therefore the write-back value N is 948."
     },
     {
       "id": "q8",
       "type": "datapath",
       "points": 10,
-      "title": "Câu 8 - Single-cycle RISC-V datapath: add",
+      "title": "Câu 8 - Single-cycle RISC-V datapath: sub",
       "image": "single_cycle_datapath",
-      "prompt": "Consider the same single-cycle RISC-V processor.<br><br>\n            Let the processor execute the instruction:<br><code>add x15, x7, x8</code><br>\n            at address <b>2008</b>. Suppose the initial value of register <code>xi</code> is <b>20i</b> for i = 1,...,31. Suppose the initial value of memory location with address M is <b>M + 1000</b>.",
+      "prompt": "Consider the same single-cycle RISC-V processor.<br><br>Let the processor execute the instruction:<br><code>sub x20, x12, x10</code><br>at address <b>4104</b>. Suppose the initial value of register <code>xi</code> is <b>32i</b> for i = 1,...,31. Suppose the initial value of memory location with address M is <b>M + 500</b>.",
       "fields": [
         {
           "id": "q8_RegWrite",
@@ -3534,12 +3312,12 @@
           "id": "q8_O",
           "label": "O",
           "answers": [
-            "0010"
+            "0110"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "0010"
+          "show": "0110"
         },
         {
           "id": "q8_Zero",
@@ -3556,56 +3334,56 @@
           "id": "q8_A",
           "label": "A",
           "answers": [
-            "2008"
+            "4104"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2008"
+          "show": "4104"
         },
         {
           "id": "q8_B",
           "label": "B",
           "answers": [
-            "0x008387B3"
+            "0x40A60A33"
           ],
           "type": "hex",
           "unit": "",
           "hint": "",
-          "show": "0x008387B3"
+          "show": "0x40A60A33"
         },
         {
           "id": "q8_C",
           "label": "C",
           "answers": [
-            "00111"
+            "01100"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00111"
+          "show": "01100"
         },
         {
           "id": "q8_D",
           "label": "D",
           "answers": [
-            "01000"
+            "01010"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "01000"
+          "show": "01010"
         },
         {
           "id": "q8_E",
           "label": "E",
           "answers": [
-            "01111"
+            "10100"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "01111"
+          "show": "10100"
         },
         {
           "id": "q8_F",
@@ -3633,56 +3411,56 @@
           "id": "q8_H",
           "label": "H",
           "answers": [
-            "2012"
+            "4108"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2012"
+          "show": "4108"
         },
         {
           "id": "q8_I",
           "label": "I",
           "answers": [
-            "140"
+            "384"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "140"
+          "show": "384"
         },
         {
           "id": "q8_J",
           "label": "J",
           "answers": [
-            "160"
+            "320"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "160"
+          "show": "320"
         },
         {
           "id": "q8_K",
           "label": "K",
           "answers": [
-            "300"
+            "64"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "300"
+          "show": "64"
         },
         {
           "id": "q8_L",
           "label": "L",
           "answers": [
-            "160"
+            "320"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "160"
+          "show": "320"
         },
         {
           "id": "q8_M",
@@ -3699,48 +3477,48 @@
           "id": "q8_N",
           "label": "N",
           "answers": [
-            "300"
+            "64"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "300"
+          "show": "64"
         },
         {
           "id": "q8_P",
           "label": "P",
           "answers": [
-            "2008"
+            "4104"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2008"
+          "show": "4104"
         },
         {
           "id": "q8_Q",
           "label": "Q",
           "answers": [
-            "2012"
+            "4108"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2012"
+          "show": "4108"
         },
         {
           "id": "q8_R",
           "label": "R",
           "answers": [
-            "2008"
+            "4104"
           ],
           "type": "decimal",
           "unit": "",
           "hint": "",
-          "show": "2008"
+          "show": "4104"
         }
       ],
-      "solution": "For add, ALUSrc = 0, MemtoReg = 0, RegWrite = 1, ALUOp = 10, ALU control O = 0010. x7 = 140 and x8 = 160, so the ALU result is 300. Data memory is not read, so M is unknown (?) and the write-back value N is 300."
+      "solution": "For sub, ALUSrc = 0, MemtoReg = 0, RegWrite = 1, ALUOp = 10, and ALU control O = 0110. x12 = 384 and x10 = 320, so the ALU result is 64. Data memory is not read, so M is unknown (?) and N = 64."
     },
     {
       "id": "q9",
@@ -3748,7 +3526,7 @@
       "points": 10,
       "title": "Câu 9 - 5-stage pipeline with forwarding and hazard detection",
       "image": "pipeline_datapath",
-      "prompt": "Assume that the following code sequence is executed on the 5-stage pipelined processor with forwarding and hazard detection units shown below:<br><pre>add x10, x2, x3\nlw  x11, 4(x10)\nlw  x12, 0(x10)\nor  x11, x10, x11\nsw  x11, 0(x10)</pre>\n            For the first seven cycles, specify the values of control signals at A, B, C, D, E, F, and G.",
+      "prompt": "Assume that the following code sequence is executed on the 5-stage pipelined processor with forwarding and hazard detection units shown below:<br><pre>add x6, x1, x2\nlw  x7, 4(x6)\nlw  x8, 0(x6)\nor  x7, x6, x7\nsw  x7, 0(x6)</pre>For the first seven cycles, specify the values of control signals at A, B, C, D, E, F, and G.",
       "pipe_rows": [
         "1st",
         "2nd",
@@ -4299,29 +4077,18 @@
           "show": "1"
         }
       ],
-      "solution": "This sequence has the same dependency structure as the typical forwarding/hazard exercise: add produces the base register for two loads, then or uses x11 loaded earlier, and sw uses the value from or. Correct rows: 1st/2nd = 1 1 xx xx 1 x x; 3rd = 1 1 00 00 1 x x; 4th = 1 1 10 00 1 1 x; 5th = 1 1 01 00 1 1 1; 6th = 1 1 00 01 1 1 1; 7th = 1 1 00 10 1 1 1."
+      "solution": "This sequence has the same dependency pattern as the standard exercise. Correct rows: 1st/2nd = 1 1 xx xx 1 x x; 3rd = 1 1 00 00 1 x x; 4th = 1 1 10 00 1 1 x; 5th = 1 1 01 00 1 1 1; 6th = 1 1 00 01 1 1 1; 7th = 1 1 00 10 1 1 1."
     },
     {
       "id": "q10",
       "type": "fields",
       "points": 10,
       "title": "Câu 10 - Execution time: single-cycle vs pipeline",
-      "prompt": "Consider the following sequence of 32-bit RISC-V instructions:<pre>add x25, x22, x21\nlw  x23, 4(x25)\nlw  x22, 0(x25)\nor  x23, x25, x23\nsw  x23, 0(x25)</pre>\n            a) Assume that it is executed on a single-cycle processor with clock cycle time <b>1000 ps</b>.<br>\n            b) Assume that it is executed on a 5-stage pipelined processor with clock cycle time <b>250 ps</b> and <b>without forwarding or hazard detection units</b>. Insert NOPs to ensure correct execution.<br>\n            c) Assume that it is executed on a 5-stage pipelined processor with clock cycle time <b>250 ps</b> and <b>with forwarding/hazard detection units</b>.<br>\n            d) Which case gives the medium performance?",
+      "prompt": "Consider the following sequence of 32-bit RISC-V instructions:<br><pre>add x8,  x1,  x2\nlw  x9,  0(x8)\nadd x10, x9,  x3\nsub x11, x10, x8\nsw  x11, 4(x8)</pre>a) Single-cycle processor clock cycle time = <b>1000 ps</b>.<br>b) 5-stage pipelined processor clock cycle time = <b>250 ps</b>, without forwarding or hazard detection units. Insert NOPs to ensure correct execution.<br>c) 5-stage pipelined processor clock cycle time = <b>250 ps</b>, with forwarding/hazard detection units.<br>d) Which case gives the medium performance?",
       "fields": [
         {
-          "id": "q10_a_cycles",
-          "label": "a) Number of cycles",
-          "answers": [
-            "5"
-          ],
-          "type": "decimal",
-          "unit": "cycles",
-          "hint": "",
-          "show": "5"
-        },
-        {
-          "id": "q10_a_time",
-          "label": "a) Execution time",
+          "id": "q10_a",
+          "label": "a) Execution time on single-cycle processor",
           "answers": [
             "5000"
           ],
@@ -4331,82 +4098,78 @@
           "show": "5000"
         },
         {
-          "id": "q10_b_nops",
-          "label": "b) Number of inserted nops",
+          "id": "q10_b_nop",
+          "label": "b) Number of inserted NOPs",
           "answers": [
-            "5"
+            "8"
           ],
           "type": "decimal",
-          "unit": "nops",
+          "unit": "NOPs",
           "hint": "",
-          "show": "5"
+          "show": "8"
         },
         {
           "id": "q10_b_cycles",
-          "label": "b) Total pipeline cycles",
+          "label": "b) Number of cycles after inserting NOPs",
           "answers": [
-            "14"
+            "17"
           ],
           "type": "decimal",
           "unit": "cycles",
           "hint": "",
-          "show": "14"
+          "show": "17"
         },
         {
           "id": "q10_b_time",
-          "label": "b) Execution time",
+          "label": "b) Execution time without forwarding/hazard detection",
           "answers": [
-            "3500"
+            "4250"
           ],
           "type": "decimal",
           "unit": "ps",
           "hint": "",
-          "show": "3500"
+          "show": "4250"
         },
         {
-          "id": "q10_c_stalls",
-          "label": "c) Number of load-use stalls/nops",
+          "id": "q10_c_stall",
+          "label": "c) Number of stalls/NOPs needed with forwarding/hazard detection",
           "answers": [
-            "0"
+            "1"
           ],
           "type": "decimal",
           "unit": "stall",
           "hint": "",
-          "show": "0"
+          "show": "1"
         },
         {
           "id": "q10_c_cycles",
-          "label": "c) Total pipeline cycles",
+          "label": "c) Number of cycles",
           "answers": [
-            "9"
+            "10"
           ],
           "type": "decimal",
           "unit": "cycles",
           "hint": "",
-          "show": "9"
+          "show": "10"
         },
         {
           "id": "q10_c_time",
-          "label": "c) Execution time",
+          "label": "c) Execution time with forwarding/hazard detection",
           "answers": [
-            "2250"
+            "2500"
           ],
           "type": "decimal",
           "unit": "ps",
           "hint": "",
-          "show": "2250"
+          "show": "2500"
         },
         {
-          "id": "q10_medium",
+          "id": "q10_d",
           "label": "d) Medium performance case",
           "answers": [
             "b",
             "case b",
-            "b)",
-            "without forwarding",
-            "without forwarding or hazard detection",
-            "pipeline without forwarding",
-            "5-stage pipeline without forwarding"
+            "b)"
           ],
           "type": "text",
           "unit": "",
@@ -4414,7 +4177,7 @@
           "show": "b"
         }
       ],
-      "solution": "Single-cycle: 5 instructions × 1000 ps = 5000 ps. Without forwarding/hazard detection, the correct inserted NOPs are: add; nop; nop; lw x23; lw x22; nop; or; nop; nop; sw. There are 5 NOPs, so 10 instructions enter the pipeline and total cycles = 10 + 4 = 14 cycles => 3500 ps. With forwarding/hazard detection, this sequence needs no extra stall because lw x23 -> or has one independent instruction between them, and forwarding handles add -> lw and or -> sw. Total cycles = 5 + 4 = 9 cycles => 2250 ps. Medium performance is case b."
+      "solution": "Single-cycle: 5 × 1000 = 5000 ps. Without forwarding/hazard detection, dependencies add→lw, lw→add, add→sub, and sub→sw each need 2 NOPs, so 8 NOPs total. There are 13 instructions including NOPs, so pipeline cycles = 13 + 4 = 17 and time = 4250 ps. With forwarding/hazard detection, only the adjacent load-use lw x9 → add x10 needs 1 stall, so cycles = 5 + 4 + 1 = 10 and time = 2500 ps. Medium performance is case b."
     }
   ]
-}
+});
