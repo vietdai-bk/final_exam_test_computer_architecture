@@ -1,7 +1,7 @@
 window.registerExam({
   "id": "exam_02",
   "title": "Đề luyện tập 02 - RISC-V, Cache và Pipeline",
-  "description": "Đề số 02 được tách riêng trong exams/exam_02.js. Mỗi câu 10 điểm, tổng 100 điểm. Đáp án chỉ hiện sau khi nộp bài.",
+  "description": "Đề số 02.",
   "questions": [
     {
       "id": "q1",
