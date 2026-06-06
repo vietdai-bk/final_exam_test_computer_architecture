@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RISC-V Exam Practice</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Computer Organization Practice</p>
+      <h1>RISC-V, Cache & Pipeline Exam Practice</h1>
+      <p class="sub">Chọn đề, điền đáp án, nộp bài để xem điểm, đáp án đúng và giải thích. Đề được tách riêng trong thư mục <code>exams/</code>.</p>
+    </div>
+    <div class="score-pill" id="scorePill">Chưa nộp</div>
+  </header>
+
+  <main class="container">
+    <section class="toolbar">
+      <label>
+        Chọn đề
+        <select id="examSelect"></select>
+      </label>
+      <label class="file-loader">
+        Nạp đề JSON ngoài
+        <input type="file" id="examFileInput" accept=".json" />
+      </label>
+      <button id="submitBtn" class="primary">Nộp bài & check điểm</button>
+      <button id="resetBtn">Làm lại</button>
+      <button id="clearBtn">Xóa đáp án đã lưu</button>
+    </section>
+
+    <section class="result-card" id="resultCard">
+      <div>
+        <p class="eyebrow">Kết quả</p>
+        <h2 id="bigScore">0/100</h2>
+        <p id="detailScore"></p>
+      </div>
+      <div class="progress"><div id="progressBar"></div></div>
+    </section>
+
+    <section id="examRoot"></section>
+  </main>
+
+  <script src="js/assets.js" defer></script>
+  <script src="exams/index.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
