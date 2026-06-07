@@ -1,7 +1,7 @@
 window.registerExam({
   "id": "exam_04",
   "title": "Đề luyện tập 04 - RISC-V, Cache và Pipeline",
-  "description": "Đề số 04 gồm 10 câu mới. Mỗi câu 10 điểm, tổng 100 điểm. Đáp án chỉ hiện sau khi nộp bài.",
+  "description": "Đề luyện tập 04. Mỗi câu 10 điểm, tổng 100 điểm.",
   "questions": [
     {
       "id": "q1",
@@ -1443,23 +1443,23 @@ window.registerExam({
                 "id": "q5_r1_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(011)=1001"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(011)=1001"
-              },
-              {
-                "id": "q5_r1_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(100)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(100)=0000"
+              },
+              {
+                "id": "q5_r1_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(011)=1001"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(011)=1001"
               }
             ],
             [],
@@ -1530,23 +1530,23 @@ window.registerExam({
                 "id": "q5_r2_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(011)=1001"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(011)=1001"
-              },
-              {
-                "id": "q5_r2_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(100)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(100)=0000"
+              },
+              {
+                "id": "q5_r2_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(011)=1001"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(011)=1001"
               }
             ],
             [
@@ -1629,23 +1629,23 @@ window.registerExam({
                 "id": "q5_r3_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(011)=1001"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(011)=1001"
-              },
-              {
-                "id": "q5_r3_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(100)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(100)=0000"
+              },
+              {
+                "id": "q5_r3_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(011)=1001"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(011)=1001"
               }
             ],
             [
@@ -1728,23 +1728,23 @@ window.registerExam({
                 "id": "q5_r4_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(011)=1001"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(011)=1001"
-              },
-              {
-                "id": "q5_r4_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(100)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(100)=0000"
+              },
+              {
+                "id": "q5_r4_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(011)=1001"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(011)=1001"
               },
               {
                 "id": "q5_r4_w0_2",
@@ -1838,12 +1838,12 @@ window.registerExam({
                 "id": "q5_r5_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(000)=0111"
+                  "T(100)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(000)=0111"
+                "show": "T(100)=0000"
               },
               {
                 "id": "q5_r5_w0_1",
@@ -1860,23 +1860,23 @@ window.registerExam({
                 "id": "q5_r5_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0000"
-              },
-              {
-                "id": "q5_r5_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(111)=1001"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1001"
+              },
+              {
+                "id": "q5_r5_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(000)=0111"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(000)=0111"
               }
             ],
             [
@@ -1959,12 +1959,12 @@ window.registerExam({
                 "id": "q5_r6_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(000)=0111"
+                  "T(100)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(000)=0111"
+                "show": "T(100)=0000"
               },
               {
                 "id": "q5_r6_w0_1",
@@ -1981,23 +1981,23 @@ window.registerExam({
                 "id": "q5_r6_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0000"
-              },
-              {
-                "id": "q5_r6_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(111)=1001"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1001"
+              },
+              {
+                "id": "q5_r6_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(000)=0111"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(000)=0111"
               }
             ],
             [
@@ -2080,12 +2080,12 @@ window.registerExam({
                 "id": "q5_r7_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(000)=0111"
+                  "T(100)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(000)=0111"
+                "show": "T(100)=0000"
               },
               {
                 "id": "q5_r7_w0_1",
@@ -2102,23 +2102,23 @@ window.registerExam({
                 "id": "q5_r7_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0000"
-              },
-              {
-                "id": "q5_r7_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(111)=1001"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1001"
+              },
+              {
+                "id": "q5_r7_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(000)=0111"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(000)=0111"
               }
             ],
             [
@@ -2212,12 +2212,12 @@ window.registerExam({
                 "id": "q5_r8_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(000)=0111"
+                  "T(100)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(000)=0111"
+                "show": "T(100)=0000"
               },
               {
                 "id": "q5_r8_w0_1",
@@ -2234,23 +2234,23 @@ window.registerExam({
                 "id": "q5_r8_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0000"
-              },
-              {
-                "id": "q5_r8_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(111)=1001"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1001"
+              },
+              {
+                "id": "q5_r8_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(000)=0111"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(000)=0111"
               }
             ],
             [
@@ -2356,12 +2356,12 @@ window.registerExam({
                 "id": "q5_r9_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(000)=0111"
+                  "T(100)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(000)=0111"
+                "show": "T(100)=0000"
               },
               {
                 "id": "q5_r9_w0_1",
@@ -2378,23 +2378,23 @@ window.registerExam({
                 "id": "q5_r9_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0000"
-              },
-              {
-                "id": "q5_r9_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(111)=1001"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1001"
+              },
+              {
+                "id": "q5_r9_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(000)=0111"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(000)=0111"
               }
             ],
             [
@@ -2500,12 +2500,12 @@ window.registerExam({
                 "id": "q5_r10_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(000)=0111"
+                  "T(100)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(000)=0111"
+                "show": "T(100)=0000"
               },
               {
                 "id": "q5_r10_w0_1",
@@ -2522,23 +2522,23 @@ window.registerExam({
                 "id": "q5_r10_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0000"
-              },
-              {
-                "id": "q5_r10_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(111)=1001"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1001"
+              },
+              {
+                "id": "q5_r10_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(000)=0111"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(000)=0111"
               }
             ],
             [
@@ -2644,12 +2644,12 @@ window.registerExam({
                 "id": "q5_r11_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(000)=0111"
+                  "T(100)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(000)=0111"
+                "show": "T(100)=0000"
               },
               {
                 "id": "q5_r11_w0_1",
@@ -2666,23 +2666,23 @@ window.registerExam({
                 "id": "q5_r11_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0000"
-              },
-              {
-                "id": "q5_r11_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(111)=1001"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1001"
+              },
+              {
+                "id": "q5_r11_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(000)=0111"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(000)=0111"
               }
             ],
             [
@@ -2714,23 +2714,23 @@ window.registerExam({
                 "id": "q5_r11_w2_0",
                 "label": "Way 2 line 1",
                 "answers": [
-                  "T(100)=1011"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=1011"
-              },
-              {
-                "id": "q5_r11_w2_1",
-                "label": "Way 2 line 2",
-                "answers": [
                   "T(111)=0101"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=0101"
+              },
+              {
+                "id": "q5_r11_w2_1",
+                "label": "Way 2 line 2",
+                "answers": [
+                  "T(100)=1011"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1011"
               }
             ]
           ]
@@ -2799,12 +2799,12 @@ window.registerExam({
                 "id": "q5_r12_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(000)=0111"
+                  "T(100)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(000)=0111"
+                "show": "T(100)=0000"
               },
               {
                 "id": "q5_r12_w0_1",
@@ -2821,23 +2821,23 @@ window.registerExam({
                 "id": "q5_r12_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0000"
-              },
-              {
-                "id": "q5_r12_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(111)=1001"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1001"
+              },
+              {
+                "id": "q5_r12_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(000)=0111"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(000)=0111"
               }
             ],
             [
@@ -2869,23 +2869,23 @@ window.registerExam({
                 "id": "q5_r12_w2_0",
                 "label": "Way 2 line 1",
                 "answers": [
-                  "T(100)=1011"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=1011"
-              },
-              {
-                "id": "q5_r12_w2_1",
-                "label": "Way 2 line 2",
-                "answers": [
                   "T(111)=0101"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=0101"
+              },
+              {
+                "id": "q5_r12_w2_1",
+                "label": "Way 2 line 2",
+                "answers": [
+                  "T(100)=1011"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1011"
               }
             ]
           ]
@@ -2954,12 +2954,12 @@ window.registerExam({
                 "id": "q5_r13_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(000)=0111"
+                  "T(100)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(000)=0111"
+                "show": "T(100)=0000"
               },
               {
                 "id": "q5_r13_w0_1",
@@ -2976,23 +2976,23 @@ window.registerExam({
                 "id": "q5_r13_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0000"
-              },
-              {
-                "id": "q5_r13_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(111)=1001"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1001"
+              },
+              {
+                "id": "q5_r13_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(000)=0111"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(000)=0111"
               }
             ],
             [
@@ -3024,23 +3024,23 @@ window.registerExam({
                 "id": "q5_r13_w2_0",
                 "label": "Way 2 line 1",
                 "answers": [
-                  "T(100)=1011"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=1011"
-              },
-              {
-                "id": "q5_r13_w2_1",
-                "label": "Way 2 line 2",
-                "answers": [
                   "T(111)=1111"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1111"
+              },
+              {
+                "id": "q5_r13_w2_1",
+                "label": "Way 2 line 2",
+                "answers": [
+                  "T(100)=1011"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1011"
               }
             ]
           ]
@@ -3071,7 +3071,7 @@ window.registerExam({
           "show": "2"
         }
       ],
-      "solution": "Block offset = 1 bit(s), set index = 3 bit(s), tag = 4 bit(s). Hit/Miss sequence: M, M, M, H, M, M, H, M, M, H, H, M, M, M. Cache full: no. Replacements: 2."
+      "solution": "Block offset = 1 bit(s), set index = 3 bit(s), tag = 4 bit(s). Hit/Miss sequence: M, M, M, H, M, M, H, M, M, H, H, M, M, M. Cache full: no. Replacements: 2. Các cột Way được giữ theo thứ tự block được đưa vào từng way vật lý; khi replacement xảy ra thì tag trong đúng way đó được thay, không sắp xếp lại theo set index."
     },
     {
       "id": "q6",

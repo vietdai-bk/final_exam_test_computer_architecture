@@ -1,7 +1,7 @@
 {
   "id": "exam_03",
   "title": "Đề luyện tập 03 - RISC-V, Cache và Pipeline",
-  "description": "Đề số 03 có câu hỏi mới và đã xáo vị trí dạng câu. Mỗi câu 10 điểm, tổng 100 điểm. Đáp án chỉ hiện sau khi nộp bài.",
+  "description": "Đề luyện tập 03. Mỗi câu 10 điểm, tổng 100 điểm.",
   "questions": [
     {
       "id": "q1",
@@ -1306,23 +1306,23 @@
                 "id": "q6_r1_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(010)=1000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(010)=1000"
-              },
-              {
-                "id": "q6_r1_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(011)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(011)=0000"
+              },
+              {
+                "id": "q6_r1_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(010)=1000"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=1000"
               }
             ],
             [],
@@ -1393,23 +1393,23 @@
                 "id": "q6_r2_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(010)=1000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(010)=1000"
-              },
-              {
-                "id": "q6_r2_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(011)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(011)=0000"
+              },
+              {
+                "id": "q6_r2_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(010)=1000"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=1000"
               },
               {
                 "id": "q6_r2_w0_2",
@@ -1491,23 +1491,23 @@
                 "id": "q6_r3_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(010)=1000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(010)=1000"
-              },
-              {
-                "id": "q6_r3_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(011)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(011)=0000"
+              },
+              {
+                "id": "q6_r3_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(010)=1000"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=1000"
               },
               {
                 "id": "q6_r3_w0_2",
@@ -1589,23 +1589,23 @@
                 "id": "q6_r4_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(010)=1000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(010)=1000"
-              },
-              {
-                "id": "q6_r4_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(011)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(011)=0000"
+              },
+              {
+                "id": "q6_r4_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(010)=1000"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=1000"
               },
               {
                 "id": "q6_r4_w0_2",
@@ -1698,17 +1698,6 @@
                 "id": "q6_r5_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(010)=1000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(010)=1000"
-              },
-              {
-                "id": "q6_r5_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(011)=0000"
                 ],
                 "type": "symbol",
@@ -1717,19 +1706,19 @@
                 "show": "T(011)=0000"
               },
               {
-                "id": "q6_r5_w0_2",
-                "label": "Way 0 line 3",
+                "id": "q6_r5_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(101)=0101"
+                  "T(010)=1000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(101)=0101"
+                "show": "T(010)=1000"
               },
               {
-                "id": "q6_r5_w0_3",
-                "label": "Way 0 line 4",
+                "id": "q6_r5_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
                   "T(110)=0010"
                 ],
@@ -1739,8 +1728,8 @@
                 "show": "T(110)=0010"
               },
               {
-                "id": "q6_r5_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q6_r5_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1000"
                 ],
@@ -1748,6 +1737,17 @@
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1000"
+              },
+              {
+                "id": "q6_r5_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(101)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0101"
               }
             ],
             [],
@@ -1818,17 +1818,6 @@
                 "id": "q6_r6_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(010)=1000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(010)=1000"
-              },
-              {
-                "id": "q6_r6_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(011)=0000"
                 ],
                 "type": "symbol",
@@ -1837,19 +1826,19 @@
                 "show": "T(011)=0000"
               },
               {
-                "id": "q6_r6_w0_2",
-                "label": "Way 0 line 3",
+                "id": "q6_r6_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(101)=0101"
+                  "T(010)=1000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(101)=0101"
+                "show": "T(010)=1000"
               },
               {
-                "id": "q6_r6_w0_3",
-                "label": "Way 0 line 4",
+                "id": "q6_r6_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
                   "T(110)=0010"
                 ],
@@ -1859,8 +1848,8 @@
                 "show": "T(110)=0010"
               },
               {
-                "id": "q6_r6_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q6_r6_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1000"
                 ],
@@ -1868,6 +1857,17 @@
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1000"
+              },
+              {
+                "id": "q6_r6_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(101)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0101"
               }
             ],
             [],
@@ -1938,17 +1938,6 @@
                 "id": "q6_r7_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(010)=1000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(010)=1000"
-              },
-              {
-                "id": "q6_r7_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(011)=0000"
                 ],
                 "type": "symbol",
@@ -1957,19 +1946,19 @@
                 "show": "T(011)=0000"
               },
               {
-                "id": "q6_r7_w0_2",
-                "label": "Way 0 line 3",
+                "id": "q6_r7_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(101)=0101"
+                  "T(010)=1000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(101)=0101"
+                "show": "T(010)=1000"
               },
               {
-                "id": "q6_r7_w0_3",
-                "label": "Way 0 line 4",
+                "id": "q6_r7_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
                   "T(110)=0010"
                 ],
@@ -1979,8 +1968,8 @@
                 "show": "T(110)=0010"
               },
               {
-                "id": "q6_r7_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q6_r7_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1000"
                 ],
@@ -1988,6 +1977,17 @@
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1000"
+              },
+              {
+                "id": "q6_r7_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(101)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0101"
               }
             ],
             [
@@ -2070,17 +2070,6 @@
                 "id": "q6_r8_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(010)=1000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(010)=1000"
-              },
-              {
-                "id": "q6_r8_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(011)=0000"
                 ],
                 "type": "symbol",
@@ -2089,19 +2078,19 @@
                 "show": "T(011)=0000"
               },
               {
-                "id": "q6_r8_w0_2",
-                "label": "Way 0 line 3",
+                "id": "q6_r8_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(101)=0101"
+                  "T(010)=1000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(101)=0101"
+                "show": "T(010)=1000"
               },
               {
-                "id": "q6_r8_w0_3",
-                "label": "Way 0 line 4",
+                "id": "q6_r8_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
                   "T(110)=0010"
                 ],
@@ -2111,8 +2100,8 @@
                 "show": "T(110)=0010"
               },
               {
-                "id": "q6_r8_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q6_r8_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1000"
                 ],
@@ -2120,6 +2109,17 @@
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1000"
+              },
+              {
+                "id": "q6_r8_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(101)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0101"
               }
             ],
             [
@@ -2214,17 +2214,6 @@
                 "id": "q6_r9_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(010)=1000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(010)=1000"
-              },
-              {
-                "id": "q6_r9_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(011)=0000"
                 ],
                 "type": "symbol",
@@ -2233,19 +2222,19 @@
                 "show": "T(011)=0000"
               },
               {
-                "id": "q6_r9_w0_2",
-                "label": "Way 0 line 3",
+                "id": "q6_r9_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(101)=0101"
+                  "T(010)=1000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(101)=0101"
+                "show": "T(010)=1000"
               },
               {
-                "id": "q6_r9_w0_3",
-                "label": "Way 0 line 4",
+                "id": "q6_r9_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
                   "T(110)=0010"
                 ],
@@ -2255,8 +2244,8 @@
                 "show": "T(110)=0010"
               },
               {
-                "id": "q6_r9_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q6_r9_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1000"
                 ],
@@ -2264,6 +2253,17 @@
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1000"
+              },
+              {
+                "id": "q6_r9_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(101)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0101"
               }
             ],
             [
@@ -2358,17 +2358,6 @@
                 "id": "q6_r10_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(010)=1000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(010)=1000"
-              },
-              {
-                "id": "q6_r10_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(011)=0000"
                 ],
                 "type": "symbol",
@@ -2377,19 +2366,19 @@
                 "show": "T(011)=0000"
               },
               {
-                "id": "q6_r10_w0_2",
-                "label": "Way 0 line 3",
+                "id": "q6_r10_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(101)=0101"
+                  "T(010)=1000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(101)=0101"
+                "show": "T(010)=1000"
               },
               {
-                "id": "q6_r10_w0_3",
-                "label": "Way 0 line 4",
+                "id": "q6_r10_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
                   "T(110)=0010"
                 ],
@@ -2399,8 +2388,8 @@
                 "show": "T(110)=0010"
               },
               {
-                "id": "q6_r10_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q6_r10_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1000"
                 ],
@@ -2408,6 +2397,17 @@
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1000"
+              },
+              {
+                "id": "q6_r10_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(101)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0101"
               }
             ],
             [
@@ -2502,17 +2502,6 @@
                 "id": "q6_r11_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(010)=1000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(010)=1000"
-              },
-              {
-                "id": "q6_r11_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(011)=0000"
                 ],
                 "type": "symbol",
@@ -2521,19 +2510,19 @@
                 "show": "T(011)=0000"
               },
               {
-                "id": "q6_r11_w0_2",
-                "label": "Way 0 line 3",
+                "id": "q6_r11_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(101)=0101"
+                  "T(010)=1000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(101)=0101"
+                "show": "T(010)=1000"
               },
               {
-                "id": "q6_r11_w0_3",
-                "label": "Way 0 line 4",
+                "id": "q6_r11_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
                   "T(110)=0010"
                 ],
@@ -2543,8 +2532,8 @@
                 "show": "T(110)=0010"
               },
               {
-                "id": "q6_r11_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q6_r11_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1000"
                 ],
@@ -2552,6 +2541,17 @@
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1000"
+              },
+              {
+                "id": "q6_r11_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(101)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0101"
               }
             ],
             [
@@ -2559,23 +2559,23 @@
                 "id": "q6_r11_w1_0",
                 "label": "Way 1 line 1",
                 "answers": [
-                  "T(101)=1010"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(101)=1010"
-              },
-              {
-                "id": "q6_r11_w1_1",
-                "label": "Way 1 line 2",
-                "answers": [
                   "T(111)=0001"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=0001"
+              },
+              {
+                "id": "q6_r11_w1_1",
+                "label": "Way 1 line 2",
+                "answers": [
+                  "T(101)=1010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1010"
               }
             ],
             [
@@ -2657,17 +2657,6 @@
                 "id": "q6_r12_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(010)=1000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(010)=1000"
-              },
-              {
-                "id": "q6_r12_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(011)=0000"
                 ],
                 "type": "symbol",
@@ -2676,19 +2665,19 @@
                 "show": "T(011)=0000"
               },
               {
-                "id": "q6_r12_w0_2",
-                "label": "Way 0 line 3",
+                "id": "q6_r12_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(101)=0101"
+                  "T(010)=1000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(101)=0101"
+                "show": "T(010)=1000"
               },
               {
-                "id": "q6_r12_w0_3",
-                "label": "Way 0 line 4",
+                "id": "q6_r12_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
                   "T(110)=0010"
                 ],
@@ -2698,8 +2687,8 @@
                 "show": "T(110)=0010"
               },
               {
-                "id": "q6_r12_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q6_r12_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1000"
                 ],
@@ -2707,6 +2696,17 @@
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1000"
+              },
+              {
+                "id": "q6_r12_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(101)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0101"
               }
             ],
             [
@@ -2714,23 +2714,23 @@
                 "id": "q6_r12_w1_0",
                 "label": "Way 1 line 1",
                 "answers": [
-                  "T(101)=1010"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(101)=1010"
-              },
-              {
-                "id": "q6_r12_w1_1",
-                "label": "Way 1 line 2",
-                "answers": [
                   "T(111)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=0010"
+              },
+              {
+                "id": "q6_r12_w1_1",
+                "label": "Way 1 line 2",
+                "answers": [
+                  "T(101)=1010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1010"
               }
             ],
             [
@@ -2812,17 +2812,6 @@
                 "id": "q6_r13_w0_0",
                 "label": "Way 0 line 1",
                 "answers": [
-                  "T(010)=1000"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(010)=1000"
-              },
-              {
-                "id": "q6_r13_w0_1",
-                "label": "Way 0 line 2",
-                "answers": [
                   "T(011)=0000"
                 ],
                 "type": "symbol",
@@ -2831,19 +2820,19 @@
                 "show": "T(011)=0000"
               },
               {
-                "id": "q6_r13_w0_2",
-                "label": "Way 0 line 3",
+                "id": "q6_r13_w0_1",
+                "label": "Way 0 line 2",
                 "answers": [
-                  "T(101)=0101"
+                  "T(010)=1000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
-                "show": "T(101)=0101"
+                "show": "T(010)=1000"
               },
               {
-                "id": "q6_r13_w0_3",
-                "label": "Way 0 line 4",
+                "id": "q6_r13_w0_2",
+                "label": "Way 0 line 3",
                 "answers": [
                   "T(110)=0010"
                 ],
@@ -2853,8 +2842,8 @@
                 "show": "T(110)=0010"
               },
               {
-                "id": "q6_r13_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q6_r13_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1000"
                 ],
@@ -2862,6 +2851,17 @@
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1000"
+              },
+              {
+                "id": "q6_r13_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(101)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0101"
               }
             ],
             [
@@ -2869,23 +2869,23 @@
                 "id": "q6_r13_w1_0",
                 "label": "Way 1 line 1",
                 "answers": [
-                  "T(101)=1010"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(101)=1010"
-              },
-              {
-                "id": "q6_r13_w1_1",
-                "label": "Way 1 line 2",
-                "answers": [
                   "T(111)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=0010"
+              },
+              {
+                "id": "q6_r13_w1_1",
+                "label": "Way 1 line 2",
+                "answers": [
+                  "T(101)=1010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1010"
               }
             ],
             [
@@ -2929,7 +2929,7 @@
           "show": "2"
         }
       ],
-      "solution": "Cache blocks = 48/2 = 24. Sets = 24/3 = 8, so index = 3 bits. Offset = 1 bit. Tag = 8 - 3 - 1 = 4 bits. Hit/Miss sequence: M, M, M, H, M, M, H, M, M, H, H, M, M, M. Replacements = 2. Cache is not full because not every set has all three ways occupied. Total bits = 24 × (2×64 data + 4 tag + 1 valid + 1 dirty) = 1644 bits."
+      "solution": "Cache blocks = 48/2 = 24. Sets = 24/3 = 8, so index = 3 bits. Offset = 1 bit. Tag = 8 - 3 - 1 = 4 bits. Hit/Miss sequence: M, M, M, H, M, M, H, M, M, H, H, M, M, M. Replacements = 2. Cache is not full because not every set has all three ways occupied. Total bits = 24 × (2×64 data + 4 tag + 1 valid + 1 dirty) = 1644 bits. Các cột Way được giữ theo thứ tự block được đưa vào từng way vật lý; khi replacement xảy ra thì tag trong đúng way đó được thay, không sắp xếp lại theo set index."
     },
     {
       "id": "q7",

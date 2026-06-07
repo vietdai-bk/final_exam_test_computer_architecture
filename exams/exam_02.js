@@ -1,7 +1,7 @@
 window.registerExam({
   "id": "exam_02",
   "title": "Đề luyện tập 02 - RISC-V, Cache và Pipeline",
-  "description": "Đề số 02 được tách riêng trong exams/exam_02.js. Mỗi câu 10 điểm, tổng 100 điểm. Đáp án chỉ hiện sau khi nộp bài.",
+  "description": "Đề luyện tập 02. Mỗi câu 10 điểm, tổng 100 điểm.",
   "questions": [
     {
       "id": "q1",
@@ -1416,17 +1416,6 @@ window.registerExam({
                 "id": "q5_r5_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0101"
-              },
-              {
-                "id": "q5_r5_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(101)=0010"
                 ],
                 "type": "symbol",
@@ -1435,8 +1424,8 @@ window.registerExam({
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_r5_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q5_r5_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1011"
                 ],
@@ -1444,6 +1433,17 @@ window.registerExam({
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1011"
+              },
+              {
+                "id": "q5_r5_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(100)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=0101"
               }
             ],
             [],
@@ -1536,17 +1536,6 @@ window.registerExam({
                 "id": "q5_r6_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0101"
-              },
-              {
-                "id": "q5_r6_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(101)=0010"
                 ],
                 "type": "symbol",
@@ -1555,8 +1544,8 @@ window.registerExam({
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_r6_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q5_r6_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1011"
                 ],
@@ -1564,6 +1553,17 @@ window.registerExam({
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1011"
+              },
+              {
+                "id": "q5_r6_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(100)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=0101"
               }
             ],
             [],
@@ -1656,17 +1656,6 @@ window.registerExam({
                 "id": "q5_r7_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0101"
-              },
-              {
-                "id": "q5_r7_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(101)=0010"
                 ],
                 "type": "symbol",
@@ -1675,8 +1664,8 @@ window.registerExam({
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_r7_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q5_r7_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1011"
                 ],
@@ -1684,6 +1673,17 @@ window.registerExam({
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1011"
+              },
+              {
+                "id": "q5_r7_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(100)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=0101"
               }
             ],
             [
@@ -1788,17 +1788,6 @@ window.registerExam({
                 "id": "q5_r8_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0101"
-              },
-              {
-                "id": "q5_r8_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(101)=0010"
                 ],
                 "type": "symbol",
@@ -1807,8 +1796,8 @@ window.registerExam({
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_r8_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q5_r8_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1011"
                 ],
@@ -1816,6 +1805,17 @@ window.registerExam({
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1011"
+              },
+              {
+                "id": "q5_r8_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(100)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=0101"
               }
             ],
             [
@@ -1932,17 +1932,6 @@ window.registerExam({
                 "id": "q5_r9_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0101"
-              },
-              {
-                "id": "q5_r9_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(101)=0010"
                 ],
                 "type": "symbol",
@@ -1951,8 +1940,8 @@ window.registerExam({
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_r9_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q5_r9_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1011"
                 ],
@@ -1960,6 +1949,17 @@ window.registerExam({
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1011"
+              },
+              {
+                "id": "q5_r9_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(100)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=0101"
               }
             ],
             [
@@ -2076,17 +2076,6 @@ window.registerExam({
                 "id": "q5_r10_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0101"
-              },
-              {
-                "id": "q5_r10_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(101)=0010"
                 ],
                 "type": "symbol",
@@ -2095,8 +2084,8 @@ window.registerExam({
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_r10_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q5_r10_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1011"
                 ],
@@ -2104,6 +2093,17 @@ window.registerExam({
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1011"
+              },
+              {
+                "id": "q5_r10_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(100)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=0101"
               }
             ],
             [
@@ -2220,17 +2220,6 @@ window.registerExam({
                 "id": "q5_r11_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0101"
-              },
-              {
-                "id": "q5_r11_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(101)=0010"
                 ],
                 "type": "symbol",
@@ -2239,8 +2228,8 @@ window.registerExam({
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_r11_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q5_r11_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1011"
                 ],
@@ -2248,6 +2237,17 @@ window.registerExam({
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1011"
+              },
+              {
+                "id": "q5_r11_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(100)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=0101"
               }
             ],
             [
@@ -2255,23 +2255,23 @@ window.registerExam({
                 "id": "q5_r11_w1_0",
                 "label": "Way 1 line 1",
                 "answers": [
-                  "T(101)=1011"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(101)=1011"
-              },
-              {
-                "id": "q5_r11_w1_1",
-                "label": "Way 1 line 2",
-                "answers": [
                   "T(111)=0000"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=0000"
+              },
+              {
+                "id": "q5_r11_w1_1",
+                "label": "Way 1 line 2",
+                "answers": [
+                  "T(101)=1011"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1011"
               }
             ],
             [
@@ -2375,17 +2375,6 @@ window.registerExam({
                 "id": "q5_r12_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0101"
-              },
-              {
-                "id": "q5_r12_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(101)=0010"
                 ],
                 "type": "symbol",
@@ -2394,8 +2383,8 @@ window.registerExam({
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_r12_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q5_r12_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1011"
                 ],
@@ -2403,6 +2392,17 @@ window.registerExam({
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1011"
+              },
+              {
+                "id": "q5_r12_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(100)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=0101"
               }
             ],
             [
@@ -2410,23 +2410,23 @@ window.registerExam({
                 "id": "q5_r12_w1_0",
                 "label": "Way 1 line 1",
                 "answers": [
-                  "T(101)=1011"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(101)=1011"
-              },
-              {
-                "id": "q5_r12_w1_1",
-                "label": "Way 1 line 2",
-                "answers": [
                   "T(111)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=0010"
+              },
+              {
+                "id": "q5_r12_w1_1",
+                "label": "Way 1 line 2",
+                "answers": [
+                  "T(101)=1011"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1011"
               }
             ],
             [
@@ -2530,17 +2530,6 @@ window.registerExam({
                 "id": "q5_r13_w0_2",
                 "label": "Way 0 line 3",
                 "answers": [
-                  "T(100)=0101"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(100)=0101"
-              },
-              {
-                "id": "q5_r13_w0_3",
-                "label": "Way 0 line 4",
-                "answers": [
                   "T(101)=0010"
                 ],
                 "type": "symbol",
@@ -2549,8 +2538,8 @@ window.registerExam({
                 "show": "T(101)=0010"
               },
               {
-                "id": "q5_r13_w0_4",
-                "label": "Way 0 line 5",
+                "id": "q5_r13_w0_3",
+                "label": "Way 0 line 4",
                 "answers": [
                   "T(111)=1011"
                 ],
@@ -2558,6 +2547,17 @@ window.registerExam({
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=1011"
+              },
+              {
+                "id": "q5_r13_w0_4",
+                "label": "Way 0 line 5",
+                "answers": [
+                  "T(100)=0101"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=0101"
               }
             ],
             [
@@ -2565,23 +2565,23 @@ window.registerExam({
                 "id": "q5_r13_w1_0",
                 "label": "Way 1 line 1",
                 "answers": [
-                  "T(101)=1011"
-                ],
-                "type": "symbol",
-                "unit": "",
-                "hint": "",
-                "show": "T(101)=1011"
-              },
-              {
-                "id": "q5_r13_w1_1",
-                "label": "Way 1 line 2",
-                "answers": [
                   "T(111)=0010"
                 ],
                 "type": "symbol",
                 "unit": "",
                 "hint": "",
                 "show": "T(111)=0010"
+              },
+              {
+                "id": "q5_r13_w1_1",
+                "label": "Way 1 line 2",
+                "answers": [
+                  "T(101)=1011"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1011"
               }
             ],
             [
@@ -2627,7 +2627,7 @@ window.registerExam({
           "show": "2"
         }
       ],
-      "solution": "Cache blocks = 48/2 = 24. Because this is 3-way, sets = 24/3 = 8, so index = 3 bits. Offset = log2(2) = 1 bit. Tag = 8 - 3 - 1 = 4 bits. Total bits = 24 × (2×64 data + 4 tag + 1 valid) = 3192 bits. Replacements occur only in set 111: 0x2e replaces T(111)=0000 in Way 1, and 0xce replaces T(111)=0001 in Way 2."
+      "solution": "Cache blocks = 48/2 = 24. Because this is 3-way, sets = 24/3 = 8, so index = 3 bits. Offset = log2(2) = 1 bit. Tag = 8 - 3 - 1 = 4 bits. Total bits = 24 × (2×64 data + 4 tag + 1 valid) = 3192 bits. Replacements occur only in set 111: 0x2e replaces T(111)=0000 in Các cột Way được giữ theo thứ tự block được đưa vào từng way vật lý; khi replacement xảy ra thì tag trong đúng way đó được thay, không sắp xếp lại theo set index."
     },
     {
       "id": "q6",
