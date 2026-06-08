@@ -354,7 +354,7 @@
           "id": "q1_r4_C",
           "label": "5th - C",
           "answers": [
-            "00"
+            "xx"
           ],
           "type": "binary",
           "unit": "",
@@ -365,7 +365,7 @@
           "id": "q1_r4_D",
           "label": "5th - D",
           "answers": [
-            "00"
+            "xx"
           ],
           "type": "binary",
           "unit": "",
