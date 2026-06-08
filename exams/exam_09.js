@@ -1,0 +1,4118 @@
+window.registerExam({
+  "id": "exam_09",
+  "title": "Đề luyện tập 09 - RISC-V, Cache và Pipeline",
+  "description": "Đề luyện tập 09. Mỗi câu 10 điểm.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "access_table",
+      "points": 10,
+      "title": "3-way set associative cache, điền Way theo thứ tự đưa vào",
+      "prompt": "Assume the memory is <b>word addressing</b> with <b>8-bit addresses</b> and the cache is a <b>3-way set associative cache</b> with <b>2-word blocks</b> and a total size of <b>48 words</b>. Assume 1 word = <b>64 bits</b>.<br><br>First, fill in the cache parameters. Then use true LRU. For each reference, identify binary address, tag, set index, offset, hit/miss, and the tags in each way after the reference has been handled.<br><br><b>Lưu ý:</b> Nếu một Way có nhiều dòng như T(001)=0000, T(010)=1011, mỗi dòng sẽ là một ô nhập riêng. Các dòng trong Way giữ theo <b>thứ tự block được đưa vào way</b>, không sort theo set index.<br><br>Sequence of word addresses:<br><code>0x24, 0xc8, 0x4b, 0x25, 0xca, 0x6e, 0xcb, 0x0a, 0x2a, 0xc9, 0x6f, 0xea, 0x4a, 0x8a</code>",
+      "fields_intro": [
+        {
+          "id": "q1_cache_blocks",
+          "label": "Number of blocks in the cache",
+          "answers": [
+            "24"
+          ],
+          "type": "decimal",
+          "unit": "blocks",
+          "hint": "",
+          "show": "24"
+        },
+        {
+          "id": "q1_sets",
+          "label": "Number of sets in the cache",
+          "answers": [
+            "8"
+          ],
+          "type": "decimal",
+          "unit": "sets",
+          "hint": "",
+          "show": "8"
+        },
+        {
+          "id": "q1_mem_blocks",
+          "label": "Number of blocks in the memory",
+          "answers": [
+            "128"
+          ],
+          "type": "decimal",
+          "unit": "blocks",
+          "hint": "",
+          "show": "128"
+        },
+        {
+          "id": "q1_tag_bits",
+          "label": "Number of tag bits in each block",
+          "answers": [
+            "4"
+          ],
+          "type": "decimal",
+          "unit": "bits",
+          "hint": "",
+          "show": "4"
+        },
+        {
+          "id": "q1_total_bits",
+          "label": "Total bits required to implement the cache",
+          "answers": [
+            "3192"
+          ],
+          "type": "decimal",
+          "unit": "bits",
+          "hint": "",
+          "show": "3192"
+        }
+      ],
+      "columns": [
+        "Word Address in Hex",
+        "Word Address in Binary",
+        "Tag in Binary",
+        "Set Index in Binary",
+        "Offset in Binary",
+        "Hit or Miss",
+        "Way 0",
+        "Way 1",
+        "Way 2"
+      ],
+      "rows": [
+        {
+          "addr": "0x24",
+          "cells": [
+            {
+              "id": "q1_0_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "00100100"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "00100100"
+            },
+            {
+              "id": "q1_0_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "0010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0010"
+            },
+            {
+              "id": "q1_0_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "010"
+            },
+            {
+              "id": "q1_0_off",
+              "label": "Offset in binary",
+              "answers": [
+                "0"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0"
+            },
+            {
+              "id": "q1_0_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            },
+            [
+              {
+                "id": "q1_r0_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              }
+            ],
+            [],
+            []
+          ]
+        },
+        {
+          "addr": "0xc8",
+          "cells": [
+            {
+              "id": "q1_1_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "11001000"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "11001000"
+            },
+            {
+              "id": "q1_1_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "1100"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "1100"
+            },
+            {
+              "id": "q1_1_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "100"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "100"
+            },
+            {
+              "id": "q1_1_off",
+              "label": "Offset in binary",
+              "answers": [
+                "0"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0"
+            },
+            {
+              "id": "q1_1_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            },
+            [
+              {
+                "id": "q1_r1_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              },
+              {
+                "id": "q1_r1_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(100)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1100"
+              }
+            ],
+            [],
+            []
+          ]
+        },
+        {
+          "addr": "0x4b",
+          "cells": [
+            {
+              "id": "q1_2_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "01001011"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "01001011"
+            },
+            {
+              "id": "q1_2_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "0100"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0100"
+            },
+            {
+              "id": "q1_2_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "101"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "101"
+            },
+            {
+              "id": "q1_2_off",
+              "label": "Offset in binary",
+              "answers": [
+                "1"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "1"
+            },
+            {
+              "id": "q1_2_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            },
+            [
+              {
+                "id": "q1_r2_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              },
+              {
+                "id": "q1_r2_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(100)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1100"
+              },
+              {
+                "id": "q1_r2_w0_2",
+                "label": "Way 0 line 3",
+                "answers": [
+                  "T(101)=0100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0100"
+              }
+            ],
+            [],
+            []
+          ]
+        },
+        {
+          "addr": "0x25",
+          "cells": [
+            {
+              "id": "q1_3_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "00100101"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "00100101"
+            },
+            {
+              "id": "q1_3_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "0010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0010"
+            },
+            {
+              "id": "q1_3_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "010"
+            },
+            {
+              "id": "q1_3_off",
+              "label": "Offset in binary",
+              "answers": [
+                "1"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "1"
+            },
+            {
+              "id": "q1_3_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "H",
+                "h",
+                "hit"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "H"
+            },
+            [
+              {
+                "id": "q1_r3_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              },
+              {
+                "id": "q1_r3_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(100)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1100"
+              },
+              {
+                "id": "q1_r3_w0_2",
+                "label": "Way 0 line 3",
+                "answers": [
+                  "T(101)=0100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0100"
+              }
+            ],
+            [],
+            []
+          ]
+        },
+        {
+          "addr": "0xca",
+          "cells": [
+            {
+              "id": "q1_4_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "11001010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "11001010"
+            },
+            {
+              "id": "q1_4_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "1100"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "1100"
+            },
+            {
+              "id": "q1_4_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "101"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "101"
+            },
+            {
+              "id": "q1_4_off",
+              "label": "Offset in binary",
+              "answers": [
+                "0"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0"
+            },
+            {
+              "id": "q1_4_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            },
+            [
+              {
+                "id": "q1_r4_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              },
+              {
+                "id": "q1_r4_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(100)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1100"
+              },
+              {
+                "id": "q1_r4_w0_2",
+                "label": "Way 0 line 3",
+                "answers": [
+                  "T(101)=0100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0100"
+              }
+            ],
+            [
+              {
+                "id": "q1_r4_w1_0",
+                "label": "Way 1 line 1",
+                "answers": [
+                  "T(101)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1100"
+              }
+            ],
+            []
+          ]
+        },
+        {
+          "addr": "0x6e",
+          "cells": [
+            {
+              "id": "q1_5_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "01101110"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "01101110"
+            },
+            {
+              "id": "q1_5_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "0110"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0110"
+            },
+            {
+              "id": "q1_5_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "111"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "111"
+            },
+            {
+              "id": "q1_5_off",
+              "label": "Offset in binary",
+              "answers": [
+                "0"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0"
+            },
+            {
+              "id": "q1_5_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            },
+            [
+              {
+                "id": "q1_r5_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              },
+              {
+                "id": "q1_r5_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(100)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1100"
+              },
+              {
+                "id": "q1_r5_w0_2",
+                "label": "Way 0 line 3",
+                "answers": [
+                  "T(101)=0100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0100"
+              },
+              {
+                "id": "q1_r5_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(111)=0110"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(111)=0110"
+              }
+            ],
+            [
+              {
+                "id": "q1_r5_w1_0",
+                "label": "Way 1 line 1",
+                "answers": [
+                  "T(101)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1100"
+              }
+            ],
+            []
+          ]
+        },
+        {
+          "addr": "0xcb",
+          "cells": [
+            {
+              "id": "q1_6_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "11001011"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "11001011"
+            },
+            {
+              "id": "q1_6_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "1100"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "1100"
+            },
+            {
+              "id": "q1_6_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "101"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "101"
+            },
+            {
+              "id": "q1_6_off",
+              "label": "Offset in binary",
+              "answers": [
+                "1"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "1"
+            },
+            {
+              "id": "q1_6_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "H",
+                "h",
+                "hit"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "H"
+            },
+            [
+              {
+                "id": "q1_r6_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              },
+              {
+                "id": "q1_r6_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(100)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1100"
+              },
+              {
+                "id": "q1_r6_w0_2",
+                "label": "Way 0 line 3",
+                "answers": [
+                  "T(101)=0100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0100"
+              },
+              {
+                "id": "q1_r6_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(111)=0110"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(111)=0110"
+              }
+            ],
+            [
+              {
+                "id": "q1_r6_w1_0",
+                "label": "Way 1 line 1",
+                "answers": [
+                  "T(101)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1100"
+              }
+            ],
+            []
+          ]
+        },
+        {
+          "addr": "0x0a",
+          "cells": [
+            {
+              "id": "q1_7_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "00001010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "00001010"
+            },
+            {
+              "id": "q1_7_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "0000"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0000"
+            },
+            {
+              "id": "q1_7_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "101"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "101"
+            },
+            {
+              "id": "q1_7_off",
+              "label": "Offset in binary",
+              "answers": [
+                "0"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0"
+            },
+            {
+              "id": "q1_7_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            },
+            [
+              {
+                "id": "q1_r7_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              },
+              {
+                "id": "q1_r7_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(100)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1100"
+              },
+              {
+                "id": "q1_r7_w0_2",
+                "label": "Way 0 line 3",
+                "answers": [
+                  "T(101)=0100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0100"
+              },
+              {
+                "id": "q1_r7_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(111)=0110"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(111)=0110"
+              }
+            ],
+            [
+              {
+                "id": "q1_r7_w1_0",
+                "label": "Way 1 line 1",
+                "answers": [
+                  "T(101)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1100"
+              }
+            ],
+            [
+              {
+                "id": "q1_r7_w2_0",
+                "label": "Way 2 line 1",
+                "answers": [
+                  "T(101)=0000"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0000"
+              }
+            ]
+          ]
+        },
+        {
+          "addr": "0x2a",
+          "cells": [
+            {
+              "id": "q1_8_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "00101010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "00101010"
+            },
+            {
+              "id": "q1_8_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "0010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0010"
+            },
+            {
+              "id": "q1_8_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "101"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "101"
+            },
+            {
+              "id": "q1_8_off",
+              "label": "Offset in binary",
+              "answers": [
+                "0"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0"
+            },
+            {
+              "id": "q1_8_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            },
+            [
+              {
+                "id": "q1_r8_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              },
+              {
+                "id": "q1_r8_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(100)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1100"
+              },
+              {
+                "id": "q1_r8_w0_2",
+                "label": "Way 0 line 3",
+                "answers": [
+                  "T(101)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0010"
+              },
+              {
+                "id": "q1_r8_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(111)=0110"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(111)=0110"
+              }
+            ],
+            [
+              {
+                "id": "q1_r8_w1_0",
+                "label": "Way 1 line 1",
+                "answers": [
+                  "T(101)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1100"
+              }
+            ],
+            [
+              {
+                "id": "q1_r8_w2_0",
+                "label": "Way 2 line 1",
+                "answers": [
+                  "T(101)=0000"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0000"
+              }
+            ]
+          ]
+        },
+        {
+          "addr": "0xc9",
+          "cells": [
+            {
+              "id": "q1_9_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "11001001"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "11001001"
+            },
+            {
+              "id": "q1_9_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "1100"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "1100"
+            },
+            {
+              "id": "q1_9_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "100"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "100"
+            },
+            {
+              "id": "q1_9_off",
+              "label": "Offset in binary",
+              "answers": [
+                "1"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "1"
+            },
+            {
+              "id": "q1_9_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "H",
+                "h",
+                "hit"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "H"
+            },
+            [
+              {
+                "id": "q1_r9_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              },
+              {
+                "id": "q1_r9_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(100)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1100"
+              },
+              {
+                "id": "q1_r9_w0_2",
+                "label": "Way 0 line 3",
+                "answers": [
+                  "T(101)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0010"
+              },
+              {
+                "id": "q1_r9_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(111)=0110"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(111)=0110"
+              }
+            ],
+            [
+              {
+                "id": "q1_r9_w1_0",
+                "label": "Way 1 line 1",
+                "answers": [
+                  "T(101)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1100"
+              }
+            ],
+            [
+              {
+                "id": "q1_r9_w2_0",
+                "label": "Way 2 line 1",
+                "answers": [
+                  "T(101)=0000"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0000"
+              }
+            ]
+          ]
+        },
+        {
+          "addr": "0x6f",
+          "cells": [
+            {
+              "id": "q1_10_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "01101111"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "01101111"
+            },
+            {
+              "id": "q1_10_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "0110"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0110"
+            },
+            {
+              "id": "q1_10_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "111"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "111"
+            },
+            {
+              "id": "q1_10_off",
+              "label": "Offset in binary",
+              "answers": [
+                "1"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "1"
+            },
+            {
+              "id": "q1_10_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "H",
+                "h",
+                "hit"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "H"
+            },
+            [
+              {
+                "id": "q1_r10_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              },
+              {
+                "id": "q1_r10_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(100)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1100"
+              },
+              {
+                "id": "q1_r10_w0_2",
+                "label": "Way 0 line 3",
+                "answers": [
+                  "T(101)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0010"
+              },
+              {
+                "id": "q1_r10_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(111)=0110"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(111)=0110"
+              }
+            ],
+            [
+              {
+                "id": "q1_r10_w1_0",
+                "label": "Way 1 line 1",
+                "answers": [
+                  "T(101)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1100"
+              }
+            ],
+            [
+              {
+                "id": "q1_r10_w2_0",
+                "label": "Way 2 line 1",
+                "answers": [
+                  "T(101)=0000"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0000"
+              }
+            ]
+          ]
+        },
+        {
+          "addr": "0xea",
+          "cells": [
+            {
+              "id": "q1_11_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "11101010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "11101010"
+            },
+            {
+              "id": "q1_11_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "1110"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "1110"
+            },
+            {
+              "id": "q1_11_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "101"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "101"
+            },
+            {
+              "id": "q1_11_off",
+              "label": "Offset in binary",
+              "answers": [
+                "0"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0"
+            },
+            {
+              "id": "q1_11_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            },
+            [
+              {
+                "id": "q1_r11_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              },
+              {
+                "id": "q1_r11_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(100)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1100"
+              },
+              {
+                "id": "q1_r11_w0_2",
+                "label": "Way 0 line 3",
+                "answers": [
+                  "T(101)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0010"
+              },
+              {
+                "id": "q1_r11_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(111)=0110"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(111)=0110"
+              }
+            ],
+            [
+              {
+                "id": "q1_r11_w1_0",
+                "label": "Way 1 line 1",
+                "answers": [
+                  "T(101)=1110"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1110"
+              }
+            ],
+            [
+              {
+                "id": "q1_r11_w2_0",
+                "label": "Way 2 line 1",
+                "answers": [
+                  "T(101)=0000"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0000"
+              }
+            ]
+          ]
+        },
+        {
+          "addr": "0x4a",
+          "cells": [
+            {
+              "id": "q1_12_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "01001010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "01001010"
+            },
+            {
+              "id": "q1_12_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "0100"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0100"
+            },
+            {
+              "id": "q1_12_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "101"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "101"
+            },
+            {
+              "id": "q1_12_off",
+              "label": "Offset in binary",
+              "answers": [
+                "0"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0"
+            },
+            {
+              "id": "q1_12_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            },
+            [
+              {
+                "id": "q1_r12_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              },
+              {
+                "id": "q1_r12_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(100)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1100"
+              },
+              {
+                "id": "q1_r12_w0_2",
+                "label": "Way 0 line 3",
+                "answers": [
+                  "T(101)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0010"
+              },
+              {
+                "id": "q1_r12_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(111)=0110"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(111)=0110"
+              }
+            ],
+            [
+              {
+                "id": "q1_r12_w1_0",
+                "label": "Way 1 line 1",
+                "answers": [
+                  "T(101)=1110"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1110"
+              }
+            ],
+            [
+              {
+                "id": "q1_r12_w2_0",
+                "label": "Way 2 line 1",
+                "answers": [
+                  "T(101)=0100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0100"
+              }
+            ]
+          ]
+        },
+        {
+          "addr": "0x8a",
+          "cells": [
+            {
+              "id": "q1_13_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "10001010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "10001010"
+            },
+            {
+              "id": "q1_13_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "1000"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "1000"
+            },
+            {
+              "id": "q1_13_idx",
+              "label": "Set index in binary",
+              "answers": [
+                "101"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "101"
+            },
+            {
+              "id": "q1_13_off",
+              "label": "Offset in binary",
+              "answers": [
+                "0"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "0"
+            },
+            {
+              "id": "q1_13_hm",
+              "label": "Hit or Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "text",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            },
+            [
+              {
+                "id": "q1_r13_w0_0",
+                "label": "Way 0 line 1",
+                "answers": [
+                  "T(010)=0010"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(010)=0010"
+              },
+              {
+                "id": "q1_r13_w0_1",
+                "label": "Way 0 line 2",
+                "answers": [
+                  "T(100)=1100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(100)=1100"
+              },
+              {
+                "id": "q1_r13_w0_2",
+                "label": "Way 0 line 3",
+                "answers": [
+                  "T(101)=1000"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1000"
+              },
+              {
+                "id": "q1_r13_w0_3",
+                "label": "Way 0 line 4",
+                "answers": [
+                  "T(111)=0110"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(111)=0110"
+              }
+            ],
+            [
+              {
+                "id": "q1_r13_w1_0",
+                "label": "Way 1 line 1",
+                "answers": [
+                  "T(101)=1110"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=1110"
+              }
+            ],
+            [
+              {
+                "id": "q1_r13_w2_0",
+                "label": "Way 2 line 1",
+                "answers": [
+                  "T(101)=0100"
+                ],
+                "type": "symbol",
+                "unit": "",
+                "hint": "",
+                "show": "T(101)=0100"
+              }
+            ]
+          ]
+        }
+      ],
+      "fields_extra": [
+        {
+          "id": "q1_full",
+          "label": "After these accesses, is the cache full?",
+          "answers": [
+            "no",
+            "n",
+            "không",
+            "khong"
+          ],
+          "type": "text",
+          "unit": "",
+          "hint": "",
+          "show": "no"
+        },
+        {
+          "id": "q1_repl",
+          "label": "How many replacements occurred?",
+          "answers": [
+            "4"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "4"
+        }
+      ],
+      "solution": "Block offset = 1 bit, set index = 3 bits, tag = 4 bits. Hit/Miss sequence: M, M, M, H, M, M, H, M, M, H, H, M, M, M. Cache full: no. Replacements: 4. Way entries keep physical insertion order, not sorted by set index."
+    },
+    {
+      "id": "q2",
+      "type": "datapath",
+      "points": 10,
+      "title": "Single-cycle RISC-V datapath: sw",
+      "image": "single_cycle_datapath",
+      "prompt": "Consider a single-cycle RISC-V processor with add, sub, and, or, lw, sw and beq.<br><br>Let the processor execute:<br><code>sw x22, 132(x5)</code><br>at address <b>9140</b>. Suppose register xi = <b>34i</b> for i=1,...,31. Suppose memory[M] = <b>M + 480</b>.",
+      "fields": [
+        {
+          "id": "q2_RegWrite",
+          "label": "RegWrite",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q2_ALUSrc",
+          "label": "ALUSrc",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q2_MemWrite",
+          "label": "MemWrite",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q2_MemtoReg",
+          "label": "MemtoReg",
+          "answers": [
+            "x"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "x"
+        },
+        {
+          "id": "q2_MemRead",
+          "label": "MemRead",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q2_Branch",
+          "label": "Branch",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q2_ALUOp",
+          "label": "ALUOp",
+          "answers": [
+            "00"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "00"
+        },
+        {
+          "id": "q2_O",
+          "label": "O",
+          "answers": [
+            "0010"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0010"
+        },
+        {
+          "id": "q2_Zero",
+          "label": "Zero",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q2_A",
+          "label": "A",
+          "answers": [
+            "9140"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "9140"
+        },
+        {
+          "id": "q2_B",
+          "label": "B",
+          "answers": [
+            "0x0962A223"
+          ],
+          "type": "hex",
+          "unit": "",
+          "hint": "",
+          "show": "0x0962A223"
+        },
+        {
+          "id": "q2_C",
+          "label": "C",
+          "answers": [
+            "00101"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "00101"
+        },
+        {
+          "id": "q2_D",
+          "label": "D",
+          "answers": [
+            "10110"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "10110"
+        },
+        {
+          "id": "q2_E",
+          "label": "E",
+          "answers": [
+            "00100"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "00100"
+        },
+        {
+          "id": "q2_F",
+          "label": "F",
+          "answers": [
+            "0100011"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0100011"
+        },
+        {
+          "id": "q2_G",
+          "label": "G",
+          "answers": [
+            "264"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "264"
+        },
+        {
+          "id": "q2_H",
+          "label": "H",
+          "answers": [
+            "9144"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "9144"
+        },
+        {
+          "id": "q2_I",
+          "label": "I",
+          "answers": [
+            "170"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "170"
+        },
+        {
+          "id": "q2_J",
+          "label": "J",
+          "answers": [
+            "132"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "132"
+        },
+        {
+          "id": "q2_K",
+          "label": "K",
+          "answers": [
+            "302"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "302"
+        },
+        {
+          "id": "q2_L",
+          "label": "L",
+          "answers": [
+            "748"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "748"
+        },
+        {
+          "id": "q2_M",
+          "label": "M",
+          "answers": [
+            "?"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "?"
+        },
+        {
+          "id": "q2_N",
+          "label": "N",
+          "answers": [
+            "x"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "x"
+        },
+        {
+          "id": "q2_P",
+          "label": "P",
+          "answers": [
+            "9140"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "9140"
+        },
+        {
+          "id": "q2_Q",
+          "label": "Q",
+          "answers": [
+            "9144"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "9144"
+        },
+        {
+          "id": "q2_R",
+          "label": "R",
+          "answers": [
+            "9404"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "9404"
+        }
+      ],
+      "solution": "x5 = 170 and x22 = 748. Effective address = 302. Store data = 748. Encoding = 0x0962A223."
+    },
+    {
+      "id": "q3",
+      "type": "pipeline",
+      "points": 10,
+      "title": "5-stage pipeline with forwarding and hazard detection",
+      "image": "pipeline_datapath",
+      "prompt": "Assume that the following code sequence is executed on the 5-stage pipelined processor with forwarding and hazard detection units shown below:<br><pre>lw  x6, 0(x1)\nadd x7, x6, x2\nsub x8, x7, x6\nsw  x8, 4(x7)\nor x9, x8, x6</pre>For the first seven cycles, specify the values of control signals at A, B, C, D, E, F, and G.",
+      "pipe_rows": [
+        "1st",
+        "2nd",
+        "3rd",
+        "4th",
+        "5th",
+        "6th",
+        "7th"
+      ],
+      "fields": [
+        {
+          "id": "q3_r0_A",
+          "label": "1st - A",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r0_B",
+          "label": "1st - B",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r0_C",
+          "label": "1st - C",
+          "answers": [
+            "xx"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "xx"
+        },
+        {
+          "id": "q3_r0_D",
+          "label": "1st - D",
+          "answers": [
+            "xx"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "xx"
+        },
+        {
+          "id": "q3_r0_E",
+          "label": "1st - E",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r0_F",
+          "label": "1st - F",
+          "answers": [
+            "x"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "x"
+        },
+        {
+          "id": "q3_r0_G",
+          "label": "1st - G",
+          "answers": [
+            "x"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "x"
+        },
+        {
+          "id": "q3_r1_A",
+          "label": "2nd - A",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r1_B",
+          "label": "2nd - B",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r1_C",
+          "label": "2nd - C",
+          "answers": [
+            "xx"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "xx"
+        },
+        {
+          "id": "q3_r1_D",
+          "label": "2nd - D",
+          "answers": [
+            "xx"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "xx"
+        },
+        {
+          "id": "q3_r1_E",
+          "label": "2nd - E",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r1_F",
+          "label": "2nd - F",
+          "answers": [
+            "x"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "x"
+        },
+        {
+          "id": "q3_r1_G",
+          "label": "2nd - G",
+          "answers": [
+            "x"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "x"
+        },
+        {
+          "id": "q3_r2_A",
+          "label": "3rd - A",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q3_r2_B",
+          "label": "3rd - B",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q3_r2_C",
+          "label": "3rd - C",
+          "answers": [
+            "00"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "00"
+        },
+        {
+          "id": "q3_r2_D",
+          "label": "3rd - D",
+          "answers": [
+            "00"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "00"
+        },
+        {
+          "id": "q3_r2_E",
+          "label": "3rd - E",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q3_r2_F",
+          "label": "3rd - F",
+          "answers": [
+            "x"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "x"
+        },
+        {
+          "id": "q3_r2_G",
+          "label": "3rd - G",
+          "answers": [
+            "x"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "x"
+        },
+        {
+          "id": "q3_r3_A",
+          "label": "4th - A",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r3_B",
+          "label": "4th - B",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r3_C",
+          "label": "4th - C",
+          "answers": [
+            "00"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "00"
+        },
+        {
+          "id": "q3_r3_D",
+          "label": "4th - D",
+          "answers": [
+            "00"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "00"
+        },
+        {
+          "id": "q3_r3_E",
+          "label": "4th - E",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r3_F",
+          "label": "4th - F",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r3_G",
+          "label": "4th - G",
+          "answers": [
+            "x"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "x"
+        },
+        {
+          "id": "q3_r4_A",
+          "label": "5th - A",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r4_B",
+          "label": "5th - B",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r4_C",
+          "label": "5th - C",
+          "answers": [
+            "01"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "01"
+        },
+        {
+          "id": "q3_r4_D",
+          "label": "5th - D",
+          "answers": [
+            "00"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "00"
+        },
+        {
+          "id": "q3_r4_E",
+          "label": "5th - E",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r4_F",
+          "label": "5th - F",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q3_r4_G",
+          "label": "5th - G",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r5_A",
+          "label": "6th - A",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r5_B",
+          "label": "6th - B",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r5_C",
+          "label": "6th - C",
+          "answers": [
+            "10"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "10"
+        },
+        {
+          "id": "q3_r5_D",
+          "label": "6th - D",
+          "answers": [
+            "00"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "00"
+        },
+        {
+          "id": "q3_r5_E",
+          "label": "6th - E",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r5_F",
+          "label": "6th - F",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r5_G",
+          "label": "6th - G",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q3_r6_A",
+          "label": "7th - A",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r6_B",
+          "label": "7th - B",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r6_C",
+          "label": "7th - C",
+          "answers": [
+            "01"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "01"
+        },
+        {
+          "id": "q3_r6_D",
+          "label": "7th - D",
+          "answers": [
+            "10"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "10"
+        },
+        {
+          "id": "q3_r6_E",
+          "label": "7th - E",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r6_F",
+          "label": "7th - F",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q3_r6_G",
+          "label": "7th - G",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        }
+      ],
+      "solution": "First seven cycle matrix (A B C D E F G): 1 1 xx xx 1 x x; 1 1 xx xx 1 x x; 0 0 00 00 0 x x; 1 1 00 00 1 1 x; 1 1 01 00 1 0 1; 1 1 10 00 1 1 0; 1 1 01 10 1 1 1 The first instruction is a load, so the direct lw -> add dependency stalls early in cycle 3. Later cycles use forwarding."
+    },
+    {
+      "id": "q4",
+      "type": "access_table",
+      "points": 10,
+      "title": "Fully associative cache với true LRU",
+      "prompt": "Assume the main memory is <b>word addressing</b> with <b>8-bit addresses</b> and the cache is a <b>fully associative cache</b> with <b>4-word blocks</b> and a total size of <b>16 words</b>. Assume one word is <b>64 bits</b>.<br><br>For the sequence below, use true LRU. For each reference, identify binary address, tag, and hit/miss.<br><br>Sequence of word addresses:<br><code>0x08, 0x09, 0x20, 0x33, 0x21, 0x47, 0x48, 0x34, 0x60, 0x49, 0x61, 0x08, 0x72, 0x73</code>",
+      "columns": [
+        "Word Address in Hex",
+        "Word Address in Binary",
+        "Tag in Binary",
+        "Hit or Miss"
+      ],
+      "rows": [
+        {
+          "addr": "0x08",
+          "cells": [
+            {
+              "id": "q4_0_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "00001000"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "00001000"
+            },
+            {
+              "id": "q4_0_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "000010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "000010"
+            },
+            {
+              "id": "q4_0_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            }
+          ]
+        },
+        {
+          "addr": "0x09",
+          "cells": [
+            {
+              "id": "q4_1_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "00001001"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "00001001"
+            },
+            {
+              "id": "q4_1_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "000010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "000010"
+            },
+            {
+              "id": "q4_1_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "H",
+                "h",
+                "hit"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "H"
+            }
+          ]
+        },
+        {
+          "addr": "0x20",
+          "cells": [
+            {
+              "id": "q4_2_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "00100000"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "00100000"
+            },
+            {
+              "id": "q4_2_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "001000"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "001000"
+            },
+            {
+              "id": "q4_2_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            }
+          ]
+        },
+        {
+          "addr": "0x33",
+          "cells": [
+            {
+              "id": "q4_3_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "00110011"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "00110011"
+            },
+            {
+              "id": "q4_3_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "001100"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "001100"
+            },
+            {
+              "id": "q4_3_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            }
+          ]
+        },
+        {
+          "addr": "0x21",
+          "cells": [
+            {
+              "id": "q4_4_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "00100001"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "00100001"
+            },
+            {
+              "id": "q4_4_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "001000"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "001000"
+            },
+            {
+              "id": "q4_4_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "H",
+                "h",
+                "hit"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "H"
+            }
+          ]
+        },
+        {
+          "addr": "0x47",
+          "cells": [
+            {
+              "id": "q4_5_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "01000111"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "01000111"
+            },
+            {
+              "id": "q4_5_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "010001"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "010001"
+            },
+            {
+              "id": "q4_5_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            }
+          ]
+        },
+        {
+          "addr": "0x48",
+          "cells": [
+            {
+              "id": "q4_6_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "01001000"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "01001000"
+            },
+            {
+              "id": "q4_6_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "010010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "010010"
+            },
+            {
+              "id": "q4_6_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            }
+          ]
+        },
+        {
+          "addr": "0x34",
+          "cells": [
+            {
+              "id": "q4_7_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "00110100"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "00110100"
+            },
+            {
+              "id": "q4_7_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "001101"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "001101"
+            },
+            {
+              "id": "q4_7_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            }
+          ]
+        },
+        {
+          "addr": "0x60",
+          "cells": [
+            {
+              "id": "q4_8_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "01100000"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "01100000"
+            },
+            {
+              "id": "q4_8_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "011000"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "011000"
+            },
+            {
+              "id": "q4_8_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            }
+          ]
+        },
+        {
+          "addr": "0x49",
+          "cells": [
+            {
+              "id": "q4_9_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "01001001"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "01001001"
+            },
+            {
+              "id": "q4_9_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "010010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "010010"
+            },
+            {
+              "id": "q4_9_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "H",
+                "h",
+                "hit"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "H"
+            }
+          ]
+        },
+        {
+          "addr": "0x61",
+          "cells": [
+            {
+              "id": "q4_10_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "01100001"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "01100001"
+            },
+            {
+              "id": "q4_10_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "011000"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "011000"
+            },
+            {
+              "id": "q4_10_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "H",
+                "h",
+                "hit"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "H"
+            }
+          ]
+        },
+        {
+          "addr": "0x08",
+          "cells": [
+            {
+              "id": "q4_11_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "00001000"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "00001000"
+            },
+            {
+              "id": "q4_11_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "000010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "000010"
+            },
+            {
+              "id": "q4_11_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            }
+          ]
+        },
+        {
+          "addr": "0x72",
+          "cells": [
+            {
+              "id": "q4_12_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "01110010"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "01110010"
+            },
+            {
+              "id": "q4_12_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "011100"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "011100"
+            },
+            {
+              "id": "q4_12_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "M",
+                "m",
+                "miss"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "M"
+            }
+          ]
+        },
+        {
+          "addr": "0x73",
+          "cells": [
+            {
+              "id": "q4_13_bin",
+              "label": "Word address in binary",
+              "answers": [
+                "01110011"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "01110011"
+            },
+            {
+              "id": "q4_13_tag",
+              "label": "Tag in binary",
+              "answers": [
+                "011100"
+              ],
+              "type": "binary",
+              "unit": "",
+              "hint": "",
+              "show": "011100"
+            },
+            {
+              "id": "q4_13_hm",
+              "label": "Hit/Miss",
+              "answers": [
+                "H",
+                "h",
+                "hit"
+              ],
+              "type": "symbol",
+              "unit": "",
+              "hint": "",
+              "show": "H"
+            }
+          ]
+        }
+      ],
+      "fields_extra": [
+        {
+          "id": "q4_full",
+          "label": "After these accesses, is the cache full?",
+          "answers": [
+            "yes",
+            "y",
+            "có",
+            "co"
+          ],
+          "type": "text",
+          "unit": "",
+          "hint": "",
+          "show": "yes"
+        },
+        {
+          "id": "q4_repl",
+          "label": "How many replacements occurred?",
+          "answers": [
+            "5"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "5"
+        }
+      ],
+      "solution": "4-word blocks => offset = 2 bit(s) and tag = upper 6 bits. Hit/Miss sequence: M, H, M, M, H, M, M, M, M, H, H, M, M, H. Cache full: yes. Replacements: 5."
+    },
+    {
+      "id": "q5",
+      "type": "fields",
+      "points": 10,
+      "title": "Cache parameters: 4-way set associative, write-back",
+      "prompt": "Here is the cache with the following key characteristics:<br>■ <b>4-Way Set Associative Cache</b><br>■ Write policy: <b>Write-back using write allocate</b> with one Dirty bit per block<br>■ Block size is <b>128 bytes</b><br>■ Cache size is <b>128 KB</b><br>■ Memory is byte addressing with <b>32-bit addresses</b>.<br><br>Fill in the following values.",
+      "fields": [
+        {
+          "id": "q5_index",
+          "label": "Set index",
+          "answers": [
+            "8"
+          ],
+          "type": "decimal",
+          "unit": "bits",
+          "hint": "",
+          "show": "8"
+        },
+        {
+          "id": "q5_offset",
+          "label": "Block offset",
+          "answers": [
+            "7"
+          ],
+          "type": "decimal",
+          "unit": "bits",
+          "hint": "",
+          "show": "7"
+        },
+        {
+          "id": "q5_tag",
+          "label": "Tag size for a block",
+          "answers": [
+            "17"
+          ],
+          "type": "decimal",
+          "unit": "bits",
+          "hint": "",
+          "show": "17"
+        },
+        {
+          "id": "q5_blocks",
+          "label": "Number of blocks",
+          "answers": [
+            "1024"
+          ],
+          "type": "decimal",
+          "unit": "blocks",
+          "hint": "",
+          "show": "1024"
+        },
+        {
+          "id": "q5_bits",
+          "label": "Total bits required to implement the cache",
+          "answers": [
+            "1068032"
+          ],
+          "type": "decimal",
+          "unit": "bits",
+          "hint": "",
+          "show": "1068032"
+        }
+      ],
+      "solution": "Blocks = 128KB/128B = 1024. Sets = 1024/4 = 256, so index = 8 bits. Offset = log2(128) = 7 bits. Tag = 32 - 8 - 7 = 17 bits. Total = 1024 × (128×8 + 17 tag + 1 valid + 1 dirty) = 1068032 bits."
+    },
+    {
+      "id": "q6",
+      "type": "datapath",
+      "points": 10,
+      "title": "Single-cycle RISC-V datapath: or",
+      "image": "single_cycle_datapath",
+      "prompt": "Consider a single-cycle RISC-V processor with add, sub, and, or, lw, sw and beq.<br><br>Let the processor execute:<br><code>or x27, x9, x25</code><br>at address <b>10000</b>. Suppose register xi = <b>46i</b> for i=1,...,31. Suppose memory[M] = <b>M + 360</b>.",
+      "fields": [
+        {
+          "id": "q6_RegWrite",
+          "label": "RegWrite",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q6_ALUSrc",
+          "label": "ALUSrc",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q6_MemWrite",
+          "label": "MemWrite",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q6_MemtoReg",
+          "label": "MemtoReg",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q6_MemRead",
+          "label": "MemRead",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q6_Branch",
+          "label": "Branch",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q6_ALUOp",
+          "label": "ALUOp",
+          "answers": [
+            "10"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "10"
+        },
+        {
+          "id": "q6_O",
+          "label": "O",
+          "answers": [
+            "0001"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0001"
+        },
+        {
+          "id": "q6_Zero",
+          "label": "Zero",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q6_A",
+          "label": "A",
+          "answers": [
+            "10000"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "10000"
+        },
+        {
+          "id": "q6_B",
+          "label": "B",
+          "answers": [
+            "0x0194EDB3"
+          ],
+          "type": "hex",
+          "unit": "",
+          "hint": "",
+          "show": "0x0194EDB3"
+        },
+        {
+          "id": "q6_C",
+          "label": "C",
+          "answers": [
+            "01001"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "01001"
+        },
+        {
+          "id": "q6_D",
+          "label": "D",
+          "answers": [
+            "11001"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "11001"
+        },
+        {
+          "id": "q6_E",
+          "label": "E",
+          "answers": [
+            "11011"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "11011"
+        },
+        {
+          "id": "q6_F",
+          "label": "F",
+          "answers": [
+            "0110011"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0110011"
+        },
+        {
+          "id": "q6_G",
+          "label": "G",
+          "answers": [
+            "0"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q6_H",
+          "label": "H",
+          "answers": [
+            "10004"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "10004"
+        },
+        {
+          "id": "q6_I",
+          "label": "I",
+          "answers": [
+            "414"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "414"
+        },
+        {
+          "id": "q6_J",
+          "label": "J",
+          "answers": [
+            "1150"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "1150"
+        },
+        {
+          "id": "q6_K",
+          "label": "K",
+          "answers": [
+            "1534"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "1534"
+        },
+        {
+          "id": "q6_L",
+          "label": "L",
+          "answers": [
+            "1150"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "1150"
+        },
+        {
+          "id": "q6_M",
+          "label": "M",
+          "answers": [
+            "?"
+          ],
+          "type": "symbol",
+          "unit": "",
+          "hint": "",
+          "show": "?"
+        },
+        {
+          "id": "q6_N",
+          "label": "N",
+          "answers": [
+            "1534"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "1534"
+        },
+        {
+          "id": "q6_P",
+          "label": "P",
+          "answers": [
+            "10000"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "10000"
+        },
+        {
+          "id": "q6_Q",
+          "label": "Q",
+          "answers": [
+            "10004"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "10004"
+        },
+        {
+          "id": "q6_R",
+          "label": "R",
+          "answers": [
+            "10000"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "10000"
+        }
+      ],
+      "solution": "x9 = 414 and x25 = 1150. K = 414 OR 1150 = 1534. Encoding = 0x0194EDB3."
+    },
+    {
+      "id": "q7",
+      "type": "fields",
+      "points": 10,
+      "title": "Fully associative cache parameters",
+      "prompt": "Assume the main memory is <b>word addressing</b> with <b>8-bit addresses</b> and the cache is a <b>fully associative cache</b> with <b>2-word blocks</b> and a total size of <b>32 words</b>. Assume one word is <b>64 bits</b>.",
+      "fields": [
+        {
+          "id": "q7_blocks_cache",
+          "label": "Number of blocks in the cache",
+          "answers": [
+            "16"
+          ],
+          "type": "decimal",
+          "unit": "blocks",
+          "hint": "",
+          "show": "16"
+        },
+        {
+          "id": "q7_sets",
+          "label": "Number of sets in the cache",
+          "answers": [
+            "1"
+          ],
+          "type": "decimal",
+          "unit": "sets",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q7_blocks_mem",
+          "label": "Number of blocks in the memory",
+          "answers": [
+            "128"
+          ],
+          "type": "decimal",
+          "unit": "blocks",
+          "hint": "",
+          "show": "128"
+        },
+        {
+          "id": "q7_tag",
+          "label": "Number of tag bits in each block",
+          "answers": [
+            "7"
+          ],
+          "type": "decimal",
+          "unit": "bits",
+          "hint": "",
+          "show": "7"
+        },
+        {
+          "id": "q7_bits",
+          "label": "Total bits required to implement the cache",
+          "answers": [
+            "2176"
+          ],
+          "type": "decimal",
+          "unit": "bits",
+          "hint": "",
+          "show": "2176"
+        }
+      ],
+      "solution": "Cache blocks = 32/2 = 16. Fully associative => one set. Memory blocks = 2^8/2 = 128. Offset = log2(2) = 1 bits, so tag = 8 - 1 = 7 bits. Total = 16 × (2×64 + 7 tag + 1 valid) = 2176 bits."
+    },
+    {
+      "id": "q8",
+      "type": "fields",
+      "points": 10,
+      "title": "Execution time: single-cycle vs pipeline",
+      "prompt": "Consider the following sequence of 32-bit RISC-V instructions:<br><pre>lw  x14, 0(x4)\nadd x15, x14, x5\nlw  x16, 8(x15)\nsub x17, x16, x14\nsw  x17, 12(x15)</pre>a) Single-cycle processor clock cycle time = <b>1000 ps</b>.<br>b) 5-stage pipelined processor clock cycle time = <b>250 ps</b>, without forwarding or hazard detection units. Insert NOPs to ensure correct execution.<br>c) 5-stage pipelined processor clock cycle time = <b>250 ps</b>, with forwarding/hazard detection units.<br>d) Which case gives the medium performance?",
+      "fields": [
+        {
+          "id": "q8_a",
+          "label": "a) Execution time on single-cycle processor",
+          "answers": [
+            "5000"
+          ],
+          "type": "decimal",
+          "unit": "ps",
+          "hint": "",
+          "show": "5000"
+        },
+        {
+          "id": "q8_b_nop",
+          "label": "b) Number of inserted NOPs",
+          "answers": [
+            "8"
+          ],
+          "type": "decimal",
+          "unit": "NOPs",
+          "hint": "",
+          "show": "8"
+        },
+        {
+          "id": "q8_b_cycles",
+          "label": "b) Number of cycles after inserting NOPs",
+          "answers": [
+            "17"
+          ],
+          "type": "decimal",
+          "unit": "cycles",
+          "hint": "",
+          "show": "17"
+        },
+        {
+          "id": "q8_b_time",
+          "label": "b) Execution time without forwarding/hazard detection",
+          "answers": [
+            "4250"
+          ],
+          "type": "decimal",
+          "unit": "ps",
+          "hint": "",
+          "show": "4250"
+        },
+        {
+          "id": "q8_c_stall",
+          "label": "c) Number of stalls/NOPs needed with forwarding/hazard detection",
+          "answers": [
+            "2"
+          ],
+          "type": "decimal",
+          "unit": "stalls",
+          "hint": "",
+          "show": "2"
+        },
+        {
+          "id": "q8_c_cycles",
+          "label": "c) Number of cycles",
+          "answers": [
+            "11"
+          ],
+          "type": "decimal",
+          "unit": "cycles",
+          "hint": "",
+          "show": "11"
+        },
+        {
+          "id": "q8_c_time",
+          "label": "c) Execution time with forwarding/hazard detection",
+          "answers": [
+            "2750"
+          ],
+          "type": "decimal",
+          "unit": "ps",
+          "hint": "",
+          "show": "2750"
+        },
+        {
+          "id": "q8_d",
+          "label": "d) Medium performance case",
+          "answers": [
+            "b",
+            "case b",
+            "b)",
+            "pipeline without forwarding",
+            "without forwarding"
+          ],
+          "type": "text",
+          "unit": "",
+          "hint": "",
+          "show": "b"
+        }
+      ],
+      "solution": "Single-cycle: 5×1000 = 5000 ps. Without forwarding/hazard detection: 8 NOPs => 13 instructions including NOPs => 17 cycles => 4250 ps. With forwarding/hazard detection: 2 load-use stall(s) => 11 cycles => 2750 ps. The medium performance is case b."
+    },
+    {
+      "id": "q9",
+      "type": "datapath",
+      "points": 10,
+      "title": "Single-cycle RISC-V datapath: lw",
+      "image": "single_cycle_datapath",
+      "prompt": "Consider a single-cycle RISC-V processor with add, sub, and, or, lw, sw and beq.<br><br>Let the processor execute:<br><code>lw x11, 148(x23)</code><br>at address <b>11008</b>. Suppose register xi = <b>22i</b> for i=1,...,31. Suppose memory[M] = <b>M + 1020</b>.",
+      "fields": [
+        {
+          "id": "q9_RegWrite",
+          "label": "RegWrite",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q9_ALUSrc",
+          "label": "ALUSrc",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q9_MemWrite",
+          "label": "MemWrite",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q9_MemtoReg",
+          "label": "MemtoReg",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q9_MemRead",
+          "label": "MemRead",
+          "answers": [
+            "1"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "1"
+        },
+        {
+          "id": "q9_Branch",
+          "label": "Branch",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q9_ALUOp",
+          "label": "ALUOp",
+          "answers": [
+            "00"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "00"
+        },
+        {
+          "id": "q9_O",
+          "label": "O",
+          "answers": [
+            "0010"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0010"
+        },
+        {
+          "id": "q9_Zero",
+          "label": "Zero",
+          "answers": [
+            "0"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0"
+        },
+        {
+          "id": "q9_A",
+          "label": "A",
+          "answers": [
+            "11008"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "11008"
+        },
+        {
+          "id": "q9_B",
+          "label": "B",
+          "answers": [
+            "0x094BA583"
+          ],
+          "type": "hex",
+          "unit": "",
+          "hint": "",
+          "show": "0x094BA583"
+        },
+        {
+          "id": "q9_C",
+          "label": "C",
+          "answers": [
+            "10111"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "10111"
+        },
+        {
+          "id": "q9_D",
+          "label": "D",
+          "answers": [
+            "10100"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "10100"
+        },
+        {
+          "id": "q9_E",
+          "label": "E",
+          "answers": [
+            "01011"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "01011"
+        },
+        {
+          "id": "q9_F",
+          "label": "F",
+          "answers": [
+            "0000011"
+          ],
+          "type": "binary",
+          "unit": "",
+          "hint": "",
+          "show": "0000011"
+        },
+        {
+          "id": "q9_G",
+          "label": "G",
+          "answers": [
+            "296"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "296"
+        },
+        {
+          "id": "q9_H",
+          "label": "H",
+          "answers": [
+            "11012"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "11012"
+        },
+        {
+          "id": "q9_I",
+          "label": "I",
+          "answers": [
+            "506"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "506"
+        },
+        {
+          "id": "q9_J",
+          "label": "J",
+          "answers": [
+            "148"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "148"
+        },
+        {
+          "id": "q9_K",
+          "label": "K",
+          "answers": [
+            "654"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "654"
+        },
+        {
+          "id": "q9_L",
+          "label": "L",
+          "answers": [
+            "440"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "440"
+        },
+        {
+          "id": "q9_M",
+          "label": "M",
+          "answers": [
+            "1674"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "1674"
+        },
+        {
+          "id": "q9_N",
+          "label": "N",
+          "answers": [
+            "1674"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "1674"
+        },
+        {
+          "id": "q9_P",
+          "label": "P",
+          "answers": [
+            "11008"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "11008"
+        },
+        {
+          "id": "q9_Q",
+          "label": "Q",
+          "answers": [
+            "11012"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "11012"
+        },
+        {
+          "id": "q9_R",
+          "label": "R",
+          "answers": [
+            "11304"
+          ],
+          "type": "decimal",
+          "unit": "",
+          "hint": "",
+          "show": "11304"
+        }
+      ],
+      "solution": "x23 = 506. Effective address = 654. Memory[654] = 1674. Encoding = 0x094BA583."
+    },
+    {
+      "id": "q10",
+      "type": "fields",
+      "points": 10,
+      "title": "Cache parameters: 16-way set associative, write-back",
+      "prompt": "Here is the cache with the following key characteristics:<br>■ <b>16-Way Set Associative Cache</b><br>■ Write policy: <b>Write-back using write allocate</b> with one Dirty bit per block<br>■ Block size is <b>64 bytes</b><br>■ Cache size is <b>256 KB</b><br>■ Memory is byte addressing with <b>32-bit addresses</b>.<br><br>Fill in the following values.",
+      "fields": [
+        {
+          "id": "q10_index",
+          "label": "Set index",
+          "answers": [
+            "8"
+          ],
+          "type": "decimal",
+          "unit": "bits",
+          "hint": "",
+          "show": "8"
+        },
+        {
+          "id": "q10_offset",
+          "label": "Block offset",
+          "answers": [
+            "6"
+          ],
+          "type": "decimal",
+          "unit": "bits",
+          "hint": "",
+          "show": "6"
+        },
+        {
+          "id": "q10_tag",
+          "label": "Tag size for a block",
+          "answers": [
+            "18"
+          ],
+          "type": "decimal",
+          "unit": "bits",
+          "hint": "",
+          "show": "18"
+        },
+        {
+          "id": "q10_blocks",
+          "label": "Number of blocks",
+          "answers": [
+            "4096"
+          ],
+          "type": "decimal",
+          "unit": "blocks",
+          "hint": "",
+          "show": "4096"
+        },
+        {
+          "id": "q10_bits",
+          "label": "Total bits required to implement the cache",
+          "answers": [
+            "2179072"
+          ],
+          "type": "decimal",
+          "unit": "bits",
+          "hint": "",
+          "show": "2179072"
+        }
+      ],
+      "solution": "Blocks = 256KB/64B = 4096. Sets = 4096/16 = 256, so index = 8 bits. Offset = log2(64) = 6 bits. Tag = 32 - 8 - 6 = 18 bits. Total = 4096 × (64×8 + 18 tag + 1 valid + 1 dirty) = 2179072 bits."
+    }
+  ]
+});
