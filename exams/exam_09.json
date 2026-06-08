@@ -2258,23 +2258,23 @@
           "id": "q3_r2_C",
           "label": "3rd - C",
           "answers": [
-            "00"
+            "xx"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00"
+          "show": "xx"
         },
         {
           "id": "q3_r2_D",
           "label": "3rd - D",
           "answers": [
-            "00"
+            "xx"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00"
+          "show": "xx"
         },
         {
           "id": "q3_r2_E",
