@@ -3269,23 +3269,23 @@
           "id": "q5_r6_C",
           "label": "7th - C",
           "answers": [
-            "00"
+            "xx"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00"
+          "show": "xx"
         },
         {
           "id": "q5_r6_D",
           "label": "7th - D",
           "answers": [
-            "00"
+            "xx"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00"
+          "show": "xx"
         },
         {
           "id": "q5_r6_E",
