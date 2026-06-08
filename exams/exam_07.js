@@ -496,7 +496,7 @@ window.registerExam({
           "id": "q2_r5_C",
           "label": "6th - C",
           "answers": [
-            "00"
+            "xx"
           ],
           "type": "binary",
           "unit": "",
@@ -507,7 +507,7 @@ window.registerExam({
           "id": "q2_r5_D",
           "label": "6th - D",
           "answers": [
-            "00"
+            "xx"
           ],
           "type": "binary",
           "unit": "",
