@@ -2258,23 +2258,23 @@
           "id": "q3_r2_C",
           "label": "3rd - C",
           "answers": [
-            "xx"
+            "00"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "xx"
+          "show": "00"
         },
         {
           "id": "q3_r2_D",
           "label": "3rd - D",
           "answers": [
-            "xx"
+            "00"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "xx"
+          "show": "00"
         },
         {
           "id": "q3_r2_E",
@@ -2335,23 +2335,23 @@
           "id": "q3_r3_C",
           "label": "4th - C",
           "answers": [
-            "00"
+            "xx"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00"
+          "show": "xx"
         },
         {
           "id": "q3_r3_D",
           "label": "4th - D",
           "answers": [
-            "00"
+            "xx"
           ],
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00"
+          "show": "xx"
         },
         {
           "id": "q3_r3_E",
