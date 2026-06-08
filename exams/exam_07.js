@@ -501,7 +501,7 @@ window.registerExam({
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00"
+          "show": "xx"
         },
         {
           "id": "q2_r5_D",
@@ -512,7 +512,7 @@ window.registerExam({
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00"
+          "show": "xx"
         },
         {
           "id": "q2_r5_E",

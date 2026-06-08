@@ -359,7 +359,7 @@ window.registerExam({
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00"
+          "show": "xx"
         },
         {
           "id": "q1_r4_D",
@@ -370,7 +370,7 @@ window.registerExam({
           "type": "binary",
           "unit": "",
           "hint": "",
-          "show": "00"
+          "show": "xx"
         },
         {
           "id": "q1_r4_E",
